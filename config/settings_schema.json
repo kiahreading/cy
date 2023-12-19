@@ -4,8 +4,8 @@
     "theme_name": "CY",
     "theme_version": "1.0.0",
     "theme_author": "Kiah Reading",
-    "theme_documentation_url": "https://www.thoughtful.website",
-    "theme_support_url": "https://www.thoughtful.website"
+    "theme_documentation_url": "https:\/\/www.thoughtful.website",
+    "theme_support_url": "https:\/\/www.thoughtful.website"
   },
   {
     "name": "t:settings_schema.logo.name",
