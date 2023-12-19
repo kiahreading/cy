@@ -20,6 +20,12 @@
                         </a>
                       </li>
                     {%- endfor -%}
+                    <li>
+                      <div class="footer-block__link">
+                        &copy; {{ shop.name }}
+                        {{ 'now' | date: '%Y' }}
+                      </div>
+                    </li>
                   </ul>
                 {%- endif -%}
             {%- endcase -%}

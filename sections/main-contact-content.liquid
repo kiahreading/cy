@@ -5,39 +5,52 @@
 <div class="contact-content">
   <div class="contact-content__container">
     <address
-      class=""
+      class="contact-content__address-container"
     >
       <a
+        class="contact-content__address-link"
         href="{{ section.settings.address_url }}"
         target="_blank"
+      >
         {{ section.settings.address_text | escape }}
-      ></a>
+      </a>
     </address>
 
     <p
-      class=""
+      class="contact-content__text"
     >
       {{ section.settings.contact_text }}
     </p>
 
     <address
-      class=""
+      class="contact-content__contact-details"
     >
       {%- if settings.social_instagram_link != blank -%}
-        <a href="{{ settings.social_instagram_link }}">Instagram</a>
+        <a
+          class="contact-content__contact-detail"
+          href="{{ settings.social_instagram_link }}"
+          >Instagram</a
+        >
       {% endif %}
       {%- if shop.email != blank -%}
-        <a href="mailto:{{ shop.email }}">{{ shop.email }}</a>
+        <a
+          class="contact-content__contact-detail"
+          href="mailto:{{ shop.email }}"
+        >
+          {{- shop.email -}}
+        </a>
       {% endif %}
       {%- if shop.phone != blank -%}
-        <a href="tel:{{ shop.phone }}">{{ shop.phone }}</a>
+        <a
+          class="contact-content__contact-detail"
+          href="tel:{{ shop.phone }}"
+        >
+          {{- shop.phone -}}
+        </a>
       {% endif %}
     </address>
 
-    <p>
-      &copy; {{ shop.name }}
-      {{ 'now' | date: '%Y' }}
-    </p>
+    <p></p>
   </div>
 </div>
 

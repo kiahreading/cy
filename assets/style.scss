@@ -71,9 +71,9 @@ button.underlined-on-hover {
     text-decoration-color: var(--black);
   }
 }
-p:not(:last-of-type) {
-  margin-bottom: 1em;
-}
+// p:not(:last-of-type) {
+//   margin-bottom: 1em;
+// }
 p a {
   color: inherit;
 }
@@ -156,6 +156,10 @@ p a {
 ---------------------------------------------- */
 .template-index {
   min-height: 100svh;
+  .footer {
+    position: absolute;
+    bottom: 0;
+  }
 }
 
 /* contact
@@ -170,9 +174,33 @@ p a {
 }
 
 .contact-content {
-  min-height: 90svh;
-  padding: 8rem var(--wide-lr-page-padding) 8rem var(--wide-lr-page-padding);
+  min-height: 92svh;
+  padding: 18rem var(--wide-lr-page-padding) 4rem var(--wide-lr-page-padding);
   display: flex;
   align-items: center;
   justify-content: center;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 800px;
+  }
+  &__address-link {
+    display: block;
+    text-transform: uppercase;
+    margin-bottom: 6rem;
+  }
+  &__text {
+    @include medium-size-font;
+    margin-bottom: 7rem;
+  }
+  &__contact-details {
+    margin-bottom: 8rem;
+  }
+  &__contact-detail {
+    display: block;
+    text-transform: uppercase;
+    @include medium-size-font;
+  }
 }

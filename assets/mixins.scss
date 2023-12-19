@@ -1,6 +1,7 @@
 @mixin medium-size-font {
   font-size: var(--medium-font-size);
   letter-spacing: .142rem;
+  line-height: 155%;
 }
 
 @mixin page-width {
