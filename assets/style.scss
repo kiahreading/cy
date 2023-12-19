@@ -101,6 +101,12 @@ p a {
   background-color: var(--white);
 }
 
+/* templates
+---------------------------------------------- */
+.template-index {
+  min-height: 100svh;
+}
+
 /* header
 ---------------------------------------------- */
 
@@ -110,22 +116,46 @@ p a {
   display: grid;
   grid-template-columns: 1fr min-content 1fr;
   align-items: center;
-  padding: .5rem 8rem;
+  padding: 3.2rem 6rem 2rem 6rem;
   @include for-small-tablet-below {
   }
-  &__inline-menu {
-    
+  &__heading-logo-wrapper {
+    margin: 0 18vw;
   }
   &__heading-logo {
-    width: 8px;
+    width: .72rem;
     height: auto;
   }
   &__menu-item {
     text-transform: uppercase;
+    padding: .5em;
+    display: block;
   }
 }
 
 .list-menu {
   display: flex;
   justify-content: space-between;
+}
+
+/* footer
+---------------------------------------------- */
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: .5rem 6rem 1.5rem 6rem;
+}
+
+.footer-block {
+  &__details-content {
+    display: flex;
+    justify-content: center;
+  }
+  &__link {
+    margin: 0 2rem;
+    padding: .5em;
+    display: block;
+  }
 }

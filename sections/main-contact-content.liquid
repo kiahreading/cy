@@ -1,90 +1,45 @@
-{% comment %}
-  <div class="isolate{% unless section.settings.full_width %} page-width{% endunless %}">
-    <div class="rich-text content-container color-{{ section.settings.color_scheme }} gradient{% if section.settings.full_width %} rich-text--full-width content-container--full-width{% endif %} section-{{ section.id }}-padding">
-      <div class="rich-text__wrapper rich-text__wrapper--{{ section.settings.desktop_content_position }}{% if section.settings.full_width %} page-width{% endif %}">
-        <div class="rich-text__blocks {{ section.settings.content_alignment }}">
-          {%- for block in section.blocks -%}
-            {%- case block.type -%}
-              {%- when 'heading' -%}
-                <h2
-                  class="rich-text__heading rte inline-richtext {{ block.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                  {{ block.shopify_attributes }}
-                  {% if settings.animations_reveal_on_scroll %}
-                    data-cascade
-                    style="--animation-order: {{ forloop.index }};"
-                  {% endif %}
-                >
-                  {{ block.settings.heading }}
-                </h2>
-              {%- when 'caption' -%}
-                <p
-                  class="rich-text__caption {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                  {{ block.shopify_attributes }}
-                  {% if settings.animations_reveal_on_scroll %}
-                    data-cascade
-                    style="--animation-order: {{ forloop.index }};"
-                  {% endif %}
-                >
-                  {{ block.settings.caption | escape }}
-                </p>
-              {%- when 'text' -%}
-                <div
-                  class="rich-text__text rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                  {{ block.shopify_attributes }}
-                  {% if settings.animations_reveal_on_scroll %}
-                    data-cascade
-                    style="--animation-order: {{ forloop.index }};"
-                  {% endif %}
-                >
-                  {{ block.settings.text }}
-                </div>
-              {%- when 'button' -%}
-                <div
-                  class="rich-text__buttons{% if block.settings.button_label != blank and block.settings.button_label_2 != blank %} rich-text__buttons--multiple{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                  {{ block.shopify_attributes }}
-                  {% if settings.animations_reveal_on_scroll %}
-                    data-cascade
-                    style="--animation-order: {{ forloop.index }};"
-                  {% endif %}
-                >
-                  {%- if block.settings.button_label != blank -%}
-                    <a
-                      {% if block.settings.button_link == blank %}
-                        role="link" aria-disabled="true"
-                      {% else %}
-                        href="{{ block.settings.button_link }}"
-                      {% endif %}
-                      class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}"
-                    >
-                      {{- block.settings.button_label | escape -}}
-                    </a>
-                  {%- endif -%}
-                  {%- if block.settings.button_label_2 != blank -%}
-                    <a
-                      {% if block.settings.button_link_2 == blank %}
-                        role="link" aria-disabled="true"
-                      {% else %}
-                        href="{{ block.settings.button_link_2 }}"
-                      {% endif %}
-                      class="button{% if block.settings.button_style_secondary_2 %} button--secondary{% else %} button--primary{% endif %}"
-                    >
-                      {{- block.settings.button_label_2 | escape -}}
-                    </a>
-                  {%- endif -%}
-                </div>
-            {%- endcase -%}
-          {%- endfor -%}
-        </div>
-      </div>
-    </div>
-  </div>
-{% endcomment %}
-
-<div>Contact details</div>
-
 <h1>
   {{ page.title | escape }}
 </h1>
+
+<div class="">
+  <div class="">
+    <address
+      class=""
+    >
+      <a
+        href="{{ block.settings.address_url }}"
+        target="_blank"
+        {{ block.settings.address_text | escape }}
+      ></a>
+    </address>
+
+    <p
+      class=""
+    >
+      {{ block.settings.contact_text | escape }}
+    </p>
+
+    <address
+      class=""
+    >
+      {%- if settings.social_instagram_link != blank -%}
+        <a href="{{ settings.social_instagram_link }}">Instagram</a>
+      {% endif %}
+      {%- if shop.email != blank -%}
+        <a href="mailto:{{ shop.email }}">{{ shop.email }}</a>
+      {% endif %}
+      {%- if shop.phone != blank -%}
+        <a href="tel:{{ shop.phone }}">{{ shop.phone }}</a>
+      {% endif %}
+    </address>
+
+    <p>
+      &copy; {{ shop.name }}
+      {{ 'now' | date: '%Y' }}
+    </p>
+  </div>
+</div>
 
 {% schema %}
 {
@@ -111,21 +66,6 @@
       "type": "textarea",
       "id": "contact_text",
       "label": "Contact text"
-    },
-    {
-      "type": "url",
-      "id": "instagram",
-      "label": "Instagram link"
-    },
-    {
-      "type": "text",
-      "id": "email",
-      "label": "Email address"
-    },
-    {
-      "type": "text",
-      "id": "telephone",
-      "label": "Telephone"
     }
   ]
 }
