@@ -1,3 +1,8 @@
+@mixin medium-size-font {
+  font-size: var(--medium-font-size);
+  letter-spacing: .142rem;
+}
+
 @mixin page-width {
   padding-left: var(--lr-page-padding);
   padding-right: var(--lr-page-padding);

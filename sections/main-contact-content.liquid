@@ -2,22 +2,22 @@
   {{ page.title | escape }}
 </h1>
 
-<div class="">
-  <div class="">
+<div class="contact-content">
+  <div class="contact-content__container">
     <address
       class=""
     >
       <a
-        href="{{ block.settings.address_url }}"
+        href="{{ section.settings.address_url }}"
         target="_blank"
-        {{ block.settings.address_text | escape }}
+        {{ section.settings.address_text | escape }}
       ></a>
     </address>
 
     <p
       class=""
     >
-      {{ block.settings.contact_text }}
+      {{ section.settings.contact_text }}
     </p>
 
     <address

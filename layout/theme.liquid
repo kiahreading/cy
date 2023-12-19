@@ -45,11 +45,12 @@
   <body class="template-{{ template | handleize }}">
     {% sections 'header-group' %}
 
-    <main id="MainContent" class="" role="main" tabindex="-1">
-      {{ content_for_layout }}
-    </main>
-
-    {% sections 'footer-group' %}
+    <div class="screen-height">
+      <main id="MainContent" class="" role="main" tabindex="-1">
+        {{ content_for_layout }}
+      </main>
+      {% sections 'footer-group' %}
+    </div>
 
     <ul hidden>
       <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>

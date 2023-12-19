@@ -101,12 +101,6 @@ p a {
   background-color: var(--white);
 }
 
-/* templates
----------------------------------------------- */
-.template-index {
-  min-height: 100svh;
-}
-
 /* header
 ---------------------------------------------- */
 
@@ -116,7 +110,7 @@ p a {
   display: grid;
   grid-template-columns: 1fr min-content 1fr;
   align-items: center;
-  padding: 3.2rem 6rem 2rem 6rem;
+  padding: 3.2rem var(--wide-lr-page-padding) 2rem var(--wide-lr-page-padding);
   @include for-small-tablet-below {
   }
   &__heading-logo-wrapper {
@@ -142,8 +136,6 @@ p a {
 ---------------------------------------------- */
 
 .footer {
-  position: absolute;
-  bottom: 0;
   width: 100%;
   padding: .5rem 6rem 1.5rem 6rem;
 }
@@ -158,4 +150,29 @@ p a {
     padding: .5em;
     display: block;
   }
+}
+
+/* templates
+---------------------------------------------- */
+.template-index {
+  min-height: 100svh;
+}
+
+/* contact
+---------------------------------------------- */
+.template-page-contact {
+  .screen-height {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.contact-content {
+  min-height: 90svh;
+  padding: 8rem var(--wide-lr-page-padding) 8rem var(--wide-lr-page-padding);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
