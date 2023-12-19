@@ -1,0 +1,131 @@
+@import "reset";
+@import "media-queries";
+@import "variables";
+@import "form-inputs";
+@import "mixins";
+@import "../node_modules/@splidejs/splide/dist/css/splide.min";
+
+/* GLOBAL
+---------------------------------------------- */
+body {
+  font-family: var(--body-font);
+  background-color: var(--white);
+  color: var(--black);
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: .18em;
+}
+html {
+  scroll-behavior: smooth;
+}
+.visually-hidden {
+  position:absolute !important;
+  overflow:hidden;
+  width:1px;
+  height:1px;
+  margin:-1px;
+  padding:0;
+  border:0;
+  clip:rect(0 0 0 0);
+  clip: rect(1px, 1px, 1px, 1px);
+  word-wrap:normal !important
+}
+.center {
+  display: flex;
+  justify-content: center!important;
+  align-items: center!important;
+}
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.text-align-center {
+  text-align: center;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.italic {
+  font-style: italic;
+}
+.sans-serif {
+  font-family: var(--sans-serif-font);
+  letter-spacing: .05em;
+  font-weight: 500;
+}
+.underlined, .button a {
+  text-decoration-color: var(--black);
+  @include underlined-link;
+}
+.underlined-on-hover a,
+a.underlined-on-hover,
+.underlined-on-hover button,
+button.underlined-on-hover {
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-color: transparent;
+  text-decoration-thickness: .06em;
+  transition: color .4s ease, text-decoration-color .4s ease;
+  &:hover,
+  &.active-link {
+    text-decoration-color: var(--black);
+  }
+}
+p:not(:last-of-type) {
+  margin-bottom: 1em;
+}
+p a {
+  color: inherit;
+}
+.page-width {
+  @include page-width;
+}
+.large-page-width {
+  @include large-page-width;
+}
+.lr-page-padding {
+  padding-left: var(--lr-page-padding);
+  padding-right: var(--lr-page-padding);
+}
+
+/* Lazy loading
+---------------------------------------------- */
+
+[data-lazy] {
+  visibility: hidden;
+}
+
+.image-wrap {
+  background-size: cover;
+  min-width: 0;
+  background-color: var(--white);
+}
+
+/* header
+---------------------------------------------- */
+
+.header {
+  position: absolute;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr min-content 1fr;
+  align-items: center;
+  padding: .5rem 8rem;
+  @include for-small-tablet-below {
+  }
+  &__inline-menu {
+    
+  }
+  &__heading-logo {
+    width: 8px;
+    height: auto;
+  }
+  &__menu-item {
+    text-transform: uppercase;
+  }
+}
+
+.list-menu {
+  display: flex;
+  justify-content: space-between;
+}

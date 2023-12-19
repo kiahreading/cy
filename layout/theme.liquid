@@ -30,6 +30,8 @@
 
     {{ content_for_header }}
 
+    {% render 'head-style' %}
+
     {{ 'style.css' | asset_url | stylesheet_tag }}
 
     <script>

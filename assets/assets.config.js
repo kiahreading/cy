@@ -20,12 +20,12 @@ const __dirname = path.dirname(__filename);
 
 // JavaScript files
 const jsFiles = [
-  "assets/js/main.js"
+  "assets/main.js"
 ]
 
 // CSS files
 const cssFiles = [
-  "assets/scss/style.scss"
+  "assets/style.scss"
 ]
 
 // --------------------------------------------------

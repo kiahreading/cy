@@ -1,0 +1,108 @@
+@mixin page-width {
+  padding-left: var(--lr-page-padding);
+  padding-right: var(--lr-page-padding);
+}
+
+@mixin large-page-width {
+  padding-left: var(--small-lr-page-padding);
+  padding-right: var(--small-lr-page-padding);
+}
+
+@mixin underlined-on-hover {
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-color: rgb(0, 0, 0, 0);
+  text-decoration-thickness: .06em;
+  transition: text-decoration-color .4s ease;
+  @media (hover: hover) {
+    &:hover {
+      text-decoration-color: inherit;
+    }
+  }
+}
+
+@mixin underlined-link {
+  text-decoration: underline;
+  text-underline-position: under;
+  text-underline-position: intial;
+  text-decoration-thickness: .06em;
+  transition: text-decoration-color .4s ease;
+  @media (hover: hover) {
+    &:hover {
+      text-decoration-color: transparent;
+    }
+  }
+}
+
+@mixin navbar-link {
+  font-size: var(--xx-small-font-size);
+  transition: color .4s ease;
+  display: block;
+  padding: 8px calc(var(--lr-page-padding)/2);
+  color: var(--black);
+}
+
+@mixin pill-button {
+  background: var(--darkgrey);
+  border: 1px solid transparent;
+  color: var(--black);
+  padding: 8px 20px 8px;
+  width: 206px;
+  text-decoration: none;
+  display: inline-block;
+  font-family: var(--heavy-font);
+  font-size: var(--medium-font-size);
+  transition: color .4s ease, background-color .4s ease, border .4s ease;
+  cursor: pointer;
+  border-radius: 20px;
+  @include for-small-tablet-below {
+    width: 100%;
+  }
+  @media (hover: hover) {
+    &:hover {
+      border: 1px solid var(--darkgrey);
+      background-color: transparent;
+      color: var(--darkgrey);
+    }
+  }
+}
+
+@mixin nav-pill-button {
+  background: rgba(165, 165, 165, 0.50);
+  border: 1px solid transparent;
+  color: var(--darkgrey);
+  height: 38px;
+  padding: 10px 20px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: var(--heavy-font);
+  font-size: var(--medium-font-size);
+  transition: all .4s ease;
+  cursor: pointer;
+  border-radius: 20px;
+  &:hover {
+    border: 1px solid var(--green);
+    background-color: transparent;
+    color: var(--green);
+  }
+}
+
+@mixin icon {
+  display: block;
+  svg {
+    height: 38px;
+    width: auto;
+  }
+  path {
+    fill: var(--darkgrey);
+    transition: fill .4s ease;
+  }
+  @media (hover: hover) {
+    &:hover {
+      path {
+        fill: var(--green);
+      } 
+    }
+  }
+}
