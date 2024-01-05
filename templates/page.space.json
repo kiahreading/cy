@@ -1,7 +1,13 @@
 {
   "sections": {
     "main": {
-      "type": "main-space-content"
+      "type": "main-space-content",
+      "settings": {
+        "space_title": "Event space rental",
+        "space_text": "At just over 1300 square feet, CY is a modern space with polished concrete floors, white walls and a unique garage-style door that opens to the outside. The multi-functional space includes in-house amenities such as a fully equipped kitchen and washroom, and can be utilized upon request for private events.",
+        "space_button_text": "Contact us",
+        "space_button_url": "shopify:\/\/pages\/contact"
+      }
     }
   },
   "order": [
