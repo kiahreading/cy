@@ -9,7 +9,7 @@
   // --x-small-font-size: 0.75rem;     //  12px
   // --small-font-size: 0.78125rem;    //  12.5px
   --medium-font-size: 1.42rem;   //  16px
-  // --large-font-size: 0.9375rem;     //  15px
+  --large-font-size: 2.66rem;     //  30px
   // --x-large-font-size: 1.1875rem;   //  19px
   // --xx-large-font-size: 1.4375rem;  //  23px
   // --xxx-large-font-size: 2.125rem;  //  34px
@@ -39,11 +39,13 @@
   // // --large-page-width: 1376px;
   // --lr-page-padding: 4.62rem;
   // --small-lr-page-padding: 2.3rem;
+  --large-lr-page-padding: 5rem;
   --wide-lr-page-padding: 6rem;
   // --x-small-grid-gap: .8rem;
   // --small-grid-gap: 1.5rem;
   // --medium-grid-gap: 3rem;
   // --large-grid-gap: 5rem;
+  --x-large-grid-gap: 7rem;
 
   /* Set up */
   font-size: var(--font-size);
@@ -91,37 +93,37 @@
 @media (max-width: 599px) {
   :root {
     /* Font sizes */
-    --tiny-font-size: 0.65625rem;     //px
-    --xx-small-font-size: 0.6875rem;  //px
-    --x-small-font-size: 0.75rem;     //px
-    --small-font-size: 0.78125rem;    //px
-    --medium-font-size: 0.84375rem;   //px
-    --large-font-size: 0.9375rem;     //px
-    --x-large-font-size: 1.1875rem;   //px
-    --xx-large-font-size: 1.4375rem;  //px
-    --xxx-large-font-size: 1.8rem;  //px
-    --xxxx-large-font-size: 2.8rem;  //px
-    --huge-font-size: 3.3rem;      //px
+    // --tiny-font-size: 0.65625rem;     //px
+    // --xx-small-font-size: 0.6875rem;  //px
+    // --x-small-font-size: 0.75rem;     //px
+    // --small-font-size: 0.78125rem;    //px
+    // --medium-font-size: 0.84375rem;   //px
+    // --large-font-size: 0.9375rem;     //px
+    // --x-large-font-size: 1.1875rem;   //px
+    // --xx-large-font-size: 1.4375rem;  //px
+    // --xxx-large-font-size: 1.8rem;  //px
+    // --xxxx-large-font-size: 2.8rem;  //px
+    // --huge-font-size: 3.3rem;      //px
   
-    /* Vertical margins */
-    --xx-small-vertical-margin: 2.1rem;   //  42px
-    --x-small-vertical-margin: 3.1625rem;   //  65px
-    --small-vertical-margin: 3.625rem;      //  74px
-    --medium-vertical-margin: 4.875rem;     //  110px
-    --large-vertical-margin: 5.1rem;          //  128px
-    --x-large-vertical-margin: 6rem;     //  140px
-    --xx-large-vertical-margin: 7rem;       //  144px
-    --xxx-large-vertical-margin: 12rem;       
+    // /* Vertical margins */
+    // --xx-small-vertical-margin: 2.1rem;   //  42px
+    // --x-small-vertical-margin: 3.1625rem;   //  65px
+    // --small-vertical-margin: 3.625rem;      //  74px
+    // --medium-vertical-margin: 4.875rem;     //  110px
+    // --large-vertical-margin: 5.1rem;          //  128px
+    // --x-large-vertical-margin: 6rem;     //  140px
+    // --xx-large-vertical-margin: 7rem;       //  144px
+    // --xxx-large-vertical-margin: 12rem;       
 
-    /* Widths, paddings, gaps */
-    /* --vh: 1; */
-    --page-width: 1324px;
-    --large-page-width: 1376px;
-    --lr-page-padding: 16px;
-    --small-lr-page-padding: 16px;
-    --x-small-grid-gap: .8rem;
-    --small-grid-gap: 1.5rem;
-    --medium-grid-gap: 3rem;
-    --large-grid-gap: 5rem;
+    // /* Widths, paddings, gaps */
+    // /* --vh: 1; */
+    // --page-width: 1324px;
+    // --large-page-width: 1376px;
+    // --lr-page-padding: 16px;
+    // --small-lr-page-padding: 16px;
+    // --x-small-grid-gap: .8rem;
+    // --small-grid-gap: 1.5rem;
+    // --medium-grid-gap: 3rem;
+    // --large-grid-gap: 5rem;
   }
 }
