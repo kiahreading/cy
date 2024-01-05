@@ -263,6 +263,230 @@ p a {
   }
 }
 
+/* collection
+---------------------------------------------- */
+.collection-hero {
+  padding: 0 var(--lr-page-padding);
+  padding-top: 22rem;
+  &__text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__title {
+    font-size: var(--large-font-size);
+    margin-bottom: 9rem;
+  }
+  &__description {
+    text-align: center;
+    max-width: 650px;
+    letter-spacing: .142rem;
+    font-size: var(--medium-font-size);
+    margin-bottom: 9rem;
+    line-height: 155%;
+  }
+}
+
+.collection {
+  .product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+  }
+  .grid {
+    padding: var(--lr-page-padding);
+    &__item {
+      width: 33.33%;
+      padding: 1rem 4rem;
+      &:first-child,
+      &:last-child {
+        width: 100%;
+        .card__media .media {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          a {
+            display: block;
+            width: 55%;
+          }
+          img {
+            height: auto;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* card
+---------------------------------------------- */
+.card-wrapper {
+  color: inherit;
+  height: 100%;
+  position: relative;
+  text-decoration: none;
+}
+
+.card {
+  text-decoration: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  .media {
+    width: 100%;
+  }
+  &__inner {
+    width: 100%;
+  }
+  &__content {
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) max-content minmax(0, 1fr);
+    padding: 1rem;
+    width: 100%;
+    flex-grow: 1;
+  }
+  &__information {
+    grid-row-start: 2;
+    padding: 1.3rem 1rem;
+  }
+  &__badge {
+    align-self: flex-end;
+    grid-row-start: 3;
+    justify-self: flex-start;
+    &.top {
+      align-self: flex-start;
+      grid-row-start: 1;
+    }
+    &.right {
+      justify-self: flex-end;
+    }
+  }
+  &__media .media img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    width: 100%;
+    aspect-ratio: 1/1.25;
+  }
+  &__heading {
+    margin-top: 0;
+    margin-bottom: 0;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.card--card,
+.card--standard .card__inner {
+  position: relative;
+  box-sizing: border-box;
+}
+
+.card .card__inner .card__media {
+  overflow: hidden;
+  /* Fix for Safari border bug on hover */
+  z-index: 0;
+}
+
+.card--standard.card--media .card__inner .card__information,
+.card--standard.card--text:not(.card--horizontal)>.card__content .card__heading:not(.card__heading--placeholder),
+.card--standard:not(.card--horizontal)>.card__content .card__badge,
+.card--standard.card--text.article-card>.card__content .card__information,
+.card--standard>.card__content .card__caption {
+  display: none;
+}
+
+.card--card.card--media .card__inner .card__information,
+.card--card.card--text .card__inner,
+.card--card.card--media>.card__content .card__badge {
+  display: none;
+}
+
+.card--horizontal .card__badge,
+.card--horizontal.card--text .card__inner {
+  display: none;
+}
+
+/* price
+---------------------------------------------- */
+.price {
+  > * {
+    display: inline-block;
+    vertical-align: top;
+  }
+  &.price--unavailable {
+    visibility: hidden;
+  }
+  &--end {
+    text-align: right;
+  }
+  .price-item {
+    display: inline-block;
+    margin: 0 1rem 0 0;
+  }
+}
+
+.price__regular .price-item--regular {
+  margin-right: 0;
+}
+
+.price:not(.price--show-badge) .price-item--last:last-of-type {
+  margin: 0;
+}
+
+
+.price--sold-out .price__availability,
+.price__regular {
+  display: block;
+}
+
+.price__sale,
+.price__availability,
+.price .price__badge-sale,
+.price .price__badge-sold-out,
+.price--on-sale .price__regular,
+.price--on-sale .price__availability {
+  display: none;
+}
+
+.price--sold-out .price__badge-sold-out,
+.price--on-sale .price__badge-sale,
+.volume-pricing--sale-badge .price__badge-sale {
+  display: inline-block;
+}
+
+.volume-pricing--sale-badge .price__badge-sale {
+  margin-left: 0.5rem;
+}
+
+.price--on-sale .price__sale {
+  display: initial;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.price--center {
+  display: initial;
+  justify-content: center;
+}
+
+.price--on-sale .price-item--regular {
+  text-decoration: line-through;
+  font-size: 1.3rem;
+}
+
+.unit-price {
+  display: block;
+  font-size: 1.1rem;
+  letter-spacing: 0.04rem;
+  margin-top: 0.2rem;
+  text-transform: uppercase;
+}
+
 /* contact
 ---------------------------------------------- */
 .template-page-contact {
