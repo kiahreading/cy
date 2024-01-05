@@ -2,30 +2,33 @@
   class="space-content"
 >
   <div class="space-content__text-wrapper">
-    {%- if settings.space_title != blank -%}
-      <h1>
-        {{ settings.space_title | escape }}
-      </h1>
-    {%- else -%}
-      <h1>
-        {{ page.title | escape }}
-      </h1>
-    {% endif %}
-    {%- if settings.space_text != blank -%}
-      <p>
-        {{ settings.space_text }}
-      </p>
-    {% endif %}
-    {%- if settings.space_button_text != blank -%}
-      <a
-        href="{{ settings.space_button_url }}"
-      >
-        {{ settings.space_button_text | escape }}
-      </a>
-    {% endif %}
+    <div class="space-content__text">
+      {%- if section.settings.space_title != blank -%}
+        <h1 class="space-content__title">
+          {{ section.settings.space_title | escape }}
+        </h1>
+      {%- else -%}
+        <h1 class="space-content__title">
+          {{ page.title | escape }}
+        </h1>
+      {% endif %}
+      {%- if section.settings.space_text != blank -%}
+        <p class="space-content__paragraph">
+          {{ section.settings.space_text }}
+        </p>
+      {% endif %}
+      {%- if section.settings.space_button_text != blank -%}
+        <a
+          class="space-content__button"
+          href="{{ section.settings.space_button_url }}"
+        >
+          {{ section.settings.space_button_text | escape }}
+        </a>
+      {% endif %}
+    </div>
   </div>
   <div
-    class="splide banner"
+    class="splide splide--banner banner"
     aria-roledescription="{{ 'sections.slideshow.carousel' | t }}"
     aria-label="{{ section.settings.accessibility_info | escape }}"
   >
@@ -61,25 +64,33 @@
                     <source
                       media="(max-width: 599px)"
                       data-srcset="
-                        {% if mobile_image.width > 640 %}{{ mobile_image.src | image_url: '640x' }} 640w{% endif %}
-                        {% if mobile_image.width > 720 %},{{ mobile_image.src | image_url: '720x' }} 720w{% endif %}
-                        {% if mobile_image.width > 900 %},{{ mobile_image.src | image_url: '900x' }} 900w{% endif %}
+                        {% if mobile_image.width > 640 %}{{ mobile_image.src | image_url: width: 640 }} 640w{% endif %}
+                        {% if mobile_image.width > 720 %},{{ mobile_image.src | image_url: width: 720 }} 720w{% endif %}
+                        {% if mobile_image.width > 900 %},{{ mobile_image.src | image_url: width: 900 }} 900w{% endif %}
                       "
                     >
                     <source
                       media="(min-width: 600px)"
                       data-srcset="
-                        {% if desktop_image.width > 640 %}{{ desktop_image.src | image_url: '640x' }} 640w{% endif %}
-                        {% if desktop_image.width > 720 %},{{ desktop_image.src | image_url: '720x' }} 720w{% endif %}
-                        {% if desktop_image.width > 900 %},{{ desktop_image.src | image_url: '900x' }} 900w{% endif %}
+                        {% if desktop_image.width > 640 %}{{ desktop_image.src | image_url: width: 640 }} 640w{% endif %}
+                        {% if desktop_image.width > 720 %},{{ desktop_image.src | image_url: width: 720 }} 720w{% endif %}
+                        {% if desktop_image.width > 900 %},{{ desktop_image.src | image_url: width: 900 }} 900w{% endif %}
+                        {% if desktop_image.width > 1200 %},{{ desktop_image.src | image_url: width: 1200 }} 1200w{% endif %}
+                        {% if desktop_image.width > 1600 %},{{ desktop_image.src | image_url: width: 1600 }} 1600w{% endif %}
+                        {% if desktop_image.width > 2000 %},{{ desktop_image.src | image_url: width: 2000 }} 2000w{% endif %}
+                        {% if desktop_image.width > 2400 %},{{ desktop_image.src | image_url: width: 2400 }} 2400w{% endif %}
                       "
                     >
                   {%- else -%}
                     <source
                       data-srcset="
-                        {% if desktop_image.width > 640 %}{{ desktop_image.src | image_url: '640x' }} 640w{% endif %}
-                        {% if desktop_image.width > 720 %},{{ desktop_image.src | image_url: '720x' }} 720w{% endif %}
-                        {% if desktop_image.width > 900 %},{{ desktop_image.src | image_url: '900x' }} 900w{% endif %}
+                        {% if desktop_image.width > 640 %}{{ desktop_image.src | image_url: width: 640 }} 640w{% endif %}
+                        {% if desktop_image.width > 720 %},{{ desktop_image.src | image_url: width: 720 }} 720w{% endif %}
+                        {% if desktop_image.width > 900 %},{{ desktop_image.src | image_url: width: 900 }} 900w{% endif %}
+                        {% if desktop_image.width > 1200 %},{{ desktop_image.src | image_url: width: 1200 }} 1200w{% endif %}
+                        {% if desktop_image.width > 1600 %},{{ desktop_image.src | image_url: width: 1600 }} 1600w{% endif %}
+                        {% if desktop_image.width > 2000 %},{{ desktop_image.src | image_url: width: 2000 }} 2000w{% endif %}
+                        {% if desktop_image.width > 2400 %},{{ desktop_image.src | image_url: width: 2400 }} 2400w{% endif %}
                       "
                     >
                   {%- endif -%}
@@ -89,9 +100,13 @@
                     data-lazy
                     data-src="{{ desktop_image.src | image_url: width: 3840 }}"
                     data-srcset="
-                      {% if desktop_image.width > 640 %}{{ desktop_image.src | image_url: '640x' }} 640w{% endif %}
-                      {% if desktop_image.width > 720 %},{{ desktop_image.src | image_url: '720x' }} 720w{% endif %}
-                      {% if desktop_image.width > 900 %},{{ desktop_image.src | image_url: '900x' }} 900w{% endif %}
+                      {% if desktop_image.width > 640 %}{{ desktop_image.src | image_url: width: 640 }} 640w{% endif %}
+                      {% if desktop_image.width > 720 %},{{ desktop_image.src | image_url: width: 720 }} 720w{% endif %}
+                      {% if desktop_image.width > 900 %},{{ desktop_image.src | image_url: width: 900 }} 900w{% endif %}
+                      {% if desktop_image.width > 1200 %},{{ desktop_image.src | image_url: width: 1200 }} 1200w{% endif %}
+                      {% if desktop_image.width > 1600 %},{{ desktop_image.src | image_url: width: 1600 }} 1600w{% endif %}
+                      {% if desktop_image.width > 2000 %},{{ desktop_image.src | image_url: width: 2000 }} 2000w{% endif %}
+                      {% if desktop_image.width > 2400 %},{{ desktop_image.src | image_url: width: 2400 }} 2400w{% endif %}
                     "
                     data-sizes="100vw"
                     alt="{{ desktop_image.alt}}"

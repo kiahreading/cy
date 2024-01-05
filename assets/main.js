@@ -10,14 +10,8 @@ const lazyLoadInstance = new LazyLoad({
   // Your custom settings go here
   elements_selector: "[data-lazy]",
   callback_loaded: (el) => {
-    gsap.to(el, {
-      autoAlpha: 1,
-      duration: .5,
-      ease: 'power1.inOut',
-      onComplete: () => {
-        el.dispatchEvent(new Event('lazyloaded'));
-      }
-    })
+    el.style.opacity = '1';
+    el.style.visibility = 'initial'
   }
 });
 
