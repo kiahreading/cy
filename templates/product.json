@@ -58,9 +58,12 @@
             "page": ""
           }
         },
-        "variant_options_UGA446": {
-          "type": "variant_options",
+        "variant_picker_6yfWpM": {
+          "type": "variant_picker",
           "settings": {
+            "picker_type": "button",
+            "swatch_picker_type": "button",
+            "swatch_shape": "circle"
           }
         }
       },
@@ -73,7 +76,7 @@
         "sku_ecECHH",
         "collapsible_tab_Dbqxce",
         "collapsible_tab_mpDGie",
-        "variant_options_UGA446"
+        "variant_picker_6yfWpM"
       ],
       "settings": {
         "hide_variants": false
