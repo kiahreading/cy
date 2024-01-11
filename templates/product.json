@@ -8,17 +8,34 @@
           "settings": {
           }
         },
+        "vendor_f399Mz": {
+          "type": "vendor",
+          "settings": {
+            "text_margin_bottom": "none"
+          }
+        },
         "text_rmeVP6": {
           "type": "text",
           "settings": {
-            "text": "Text block",
-            "text_style": "body",
-            "text_margin_bottom": "none",
+            "text": "{{ product.metafields.custom.edition_number.value }}",
+            "text_style": "uppercase",
+            "text_margin_bottom": "regular",
             "text_font_size": "regular"
+          }
+        },
+        "description_bFawAK": {
+          "type": "description",
+          "settings": {
+          }
+        },
+        "price_6zrKUN": {
+          "type": "price",
+          "settings": {
           }
         },
         "inventory_YHwqwY": {
           "type": "inventory",
+          "disabled": true,
           "settings": {
             "inventory_threshold": 10,
             "show_inventory_quantity": true
@@ -50,33 +67,28 @@
             "text_margin_bottom": "none"
           }
         },
-        "collapsible_tab_Dbqxce": {
-          "type": "collapsible_tab",
+        "text_KjamA7": {
+          "type": "text",
           "settings": {
-            "heading": "Pop up",
-            "content": "<p>This is the first pop-up<\/p>",
-            "page": ""
-          }
-        },
-        "collapsible_tab_mpDGie": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Pop up",
-            "content": "<p>This is the second pop up<\/p>",
-            "page": ""
+            "text": "{{ product.metafields.custom.lead_time.value }}",
+            "text_style": "body",
+            "text_margin_bottom": "regular",
+            "text_font_size": "regular"
           }
         }
       },
       "block_order": [
         "title_WNLh9R",
+        "vendor_f399Mz",
         "text_rmeVP6",
+        "description_bFawAK",
+        "price_6zrKUN",
         "inventory_YHwqwY",
         "quantity_selector_9YLzyD",
         "variant_picker_6yfWpM",
         "buy_buttons_NVYxiP",
         "sku_ecECHH",
-        "collapsible_tab_Dbqxce",
-        "collapsible_tab_mpDGie"
+        "text_KjamA7"
       ],
       "settings": {
         "hide_variants": false
