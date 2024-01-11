@@ -29,6 +29,11 @@
           "settings": {
           }
         },
+        "variant_picker_Jb9w7c": {
+          "type": "variant_picker",
+          "settings": {
+          }
+        },
         "buy_buttons_NVYxiP": {
           "type": "buy_buttons",
           "settings": {
@@ -64,6 +69,7 @@
         "text_rmeVP6",
         "inventory_YHwqwY",
         "quantity_selector_9YLzyD",
+        "variant_picker_Jb9w7c",
         "buy_buttons_NVYxiP",
         "sku_ecECHH",
         "collapsible_tab_Dbqxce",
