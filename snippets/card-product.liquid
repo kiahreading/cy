@@ -77,17 +77,27 @@
           </div>
         </h3>
         <div class="card-information">
-          {%- if show_vendor -%}
-            <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
-            <div class="caption-with-letter-spacing light">{{ card_product.vendor }}</div>
-          {%- endif -%}
+          <div class="vendor">
+            {%- if show_vendor -%}
+              <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
+              <span class="caption-with-letter-spacing light">{{ card_product.vendor }}</span>
+            {%- endif -%}
+            {%- if card_product.metafields.custom.year and show_vendor -%}
+              <span class="caption-with-letter-spacing light"> - </span>
+            {%- endif -%}
+            {%- if card_product.metafields.custom.year -%}
+              <span class="caption-with-letter-spacing light">{{ card_product.metafields.custom.year }}</span>
+            {%- endif -%}
+          </div>
 
-          {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
-          {%- if card_product.quantity_price_breaks_configured? -%}
-            <div class="card__information-volume-pricing-note">
-              <span class="caption">{{ 'products.product.volume_pricing.note' | t }}</span>
-            </div>
-          {%- endif -%}
+          {%- comment -%}
+            {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
+            {%- if card_product.quantity_price_breaks_configured? -%}
+              <div class="card__information-volume-pricing-note">
+                <span class="caption">{{ 'products.product.volume_pricing.note' | t }}</span>
+              </div>
+            {%- endif -%}
+          {%- endcomment -%}
         </div>
       </div>
       <div class="card__badge {{ settings.badge_position }}">
@@ -98,13 +108,15 @@
           >
             {{- 'products.product.sold_out' | t -}}
           </span>
-        {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
-          <span
-            id="Badge-{{ section_id }}-{{ card_product.id }}"
-            class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
-          >
-            {{- 'products.product.on_sale' | t -}}
-          </span>
+          {%- comment -%}
+            {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
+              <span
+                id="Badge-{{ section_id }}-{{ card_product.id }}"
+                class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
+              >
+                {{- 'products.product.on_sale' | t -}}
+              </span>
+          {%- endcomment -%}
         {%- endif -%}
       </div>
     </a>
