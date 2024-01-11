@@ -80,13 +80,13 @@
           <div class="vendor">
             {%- if show_vendor -%}
               <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
-              <span class="caption-with-letter-spacing light">{{ card_product.vendor }}</span>
+              <span class="caption-with-letter-spacing">{{ card_product.vendor }}</span>
             {%- endif -%}
             {%- if card_product.metafields.custom.year and show_vendor -%}
-              <span class="caption-with-letter-spacing light"> - </span>
+              <span class="caption-with-letter-spacing"> - </span>
             {%- endif -%}
             {%- if card_product.metafields.custom.year -%}
-              <span class="caption-with-letter-spacing light">{{ card_product.metafields.custom.year }}</span>
+              <span class="caption-with-letter-spacing">{{ card_product.metafields.custom.year }}</span>
             {%- endif -%}
           </div>
 

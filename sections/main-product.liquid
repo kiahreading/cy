@@ -124,6 +124,20 @@
                     {{ product.description }}
                   </div>
                 {%- endif -%}
+              {%- when 'vendor' -%}
+                <p
+                  class="product__vendor"
+                >
+                  {%- if product.vendor != blank -%}
+                    <span class="caption-with-letter-spacing">{{ product.vendor }}</span>
+                  {%- endif -%}
+                  {%- if product.vendor and product.metafields.custom.year -%}
+                    <span class="caption-with-letter-spacing">, </span>
+                  {%- endif -%}
+                  {%- if product.metafields.custom.year -%}
+                    <span class="caption-with-letter-spacing">{{ product.metafields.custom.year }}</span>
+                  {%- endif -%}
+                </p>
               {%- when 'sku' -%}
                 <p
                   class="product__sku no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.sku.size == 0 %} visibility-hidden{% endif %}"
@@ -407,8 +421,7 @@
             {% render 'icon-close' %}
           </button>
           <div class="product-popup-modal__content-info">
-            <h1 class="h2">{{ block.settings.page.title }}</h1>
-            {{ block.settings.page.content }}
+            {{ block.settings.content }}
           </div>
         </div>
       </modal-dialog>
@@ -601,6 +614,34 @@
       ]
     },
     {
+      "type": "vendor",
+      "name": "Vendor",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "text_margin_bottom",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "regular",
+              "label": "Regular"
+            }
+          ],
+          "default": "none",
+          "label": "None"
+        }
+      ]
+    },
+    {
+      "type": "inquire",
+      "name": "Inquire",
+      "limit": 1
+    },
+    {
       "type": "inventory",
       "name": "t:sections.main-product.blocks.inventory.name",
       "limit": 1,
@@ -737,9 +778,9 @@
           "label": "t:sections.main-product.blocks.popup.settings.link_label.label"
         },
         {
-          "id": "page",
-          "type": "page",
-          "label": "t:sections.main-product.blocks.popup.settings.page.label"
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
         }
       ]
     }
