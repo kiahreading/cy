@@ -1,10 +1,86 @@
 {
   "sections": {
     "main": {
-      "type": "main-product"
+      "type": "main-product",
+      "blocks": {
+        "title_WNLh9R": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "text_rmeVP6": {
+          "type": "text",
+          "settings": {
+            "text": "Text block",
+            "text_style": "body",
+            "text_margin_bottom": "none",
+            "text_font_size": "regular"
+          }
+        },
+        "inventory_YHwqwY": {
+          "type": "inventory",
+          "settings": {
+            "inventory_threshold": 10,
+            "show_inventory_quantity": true
+          }
+        },
+        "quantity_selector_9YLzyD": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "buy_buttons_NVYxiP": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "sku_ecECHH": {
+          "type": "sku",
+          "settings": {
+            "text_margin_bottom": "none"
+          }
+        },
+        "collapsible_tab_Dbqxce": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Pop up",
+            "content": "<p>This is the first pop-up<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_mpDGie": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Pop up",
+            "content": "<p>This is the second pop up<\/p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "title_WNLh9R",
+        "text_rmeVP6",
+        "inventory_YHwqwY",
+        "quantity_selector_9YLzyD",
+        "buy_buttons_NVYxiP",
+        "sku_ecECHH",
+        "collapsible_tab_Dbqxce",
+        "collapsible_tab_mpDGie"
+      ],
+      "settings": {
+        "hide_variants": false
+      }
     },
     "related-products": {
-      "type": "related-products"
+      "type": "related-products",
+      "settings": {
+        "heading": "You may also like",
+        "products_to_show": 4,
+        "image_ratio": "adapt",
+        "show_vendor": false
+      }
     }
   },
   "order": [
