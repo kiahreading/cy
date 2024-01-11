@@ -29,6 +29,14 @@
           "settings": {
           }
         },
+        "variant_picker_6yfWpM": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
         "buy_buttons_NVYxiP": {
           "type": "buy_buttons",
           "settings": {
@@ -57,14 +65,6 @@
             "content": "<p>This is the second pop up<\/p>",
             "page": ""
           }
-        },
-        "variant_picker_6yfWpM": {
-          "type": "variant_picker",
-          "settings": {
-            "picker_type": "button",
-            "swatch_picker_type": "button",
-            "swatch_shape": "circle"
-          }
         }
       },
       "block_order": [
@@ -72,11 +72,11 @@
         "text_rmeVP6",
         "inventory_YHwqwY",
         "quantity_selector_9YLzyD",
+        "variant_picker_6yfWpM",
         "buy_buttons_NVYxiP",
         "sku_ecECHH",
         "collapsible_tab_Dbqxce",
-        "collapsible_tab_mpDGie",
-        "variant_picker_6yfWpM"
+        "collapsible_tab_mpDGie"
       ],
       "settings": {
         "hide_variants": false
