@@ -34,13 +34,23 @@
   style="--ratio: {{ media.aspect_ratio | default: 1.0 }}; --preview-ratio: {{ media.preview_image.aspect_ratio | default: 1.0 }};"
 >
   <div class="product__media media">
-    {{
-      media.preview_image
-      | image_url: width: 1946
-      | image_tag:
-        loading: lazy,
-        sizes: sizes,
-        widths: '246, 493, 600, 713, 823, 990, 1100, 1206, 1346, 1426, 1646, 1946'
-    }}
+    <img
+      type=""
+      data-lazy
+      data-src="{{ media.preview_image.src | image_url: width: 1946 }}"
+      data-srcset="
+        {%- if media.preview_image.width >= 165 -%}{{ media.preview_image | image_url: width: 165 }} 165w,{%- endif -%}
+        {%- if media.preview_image.width >= 360 -%}{{ media.preview_image | image_url: width: 360 }} 360w,{%- endif -%}
+        {%- if media.preview_image.width >= 533 -%}{{ media.preview_image | image_url: width: 533 }} 533w,{%- endif -%}
+        {%- if media.preview_image.width >= 720 -%}{{ media.preview_image | image_url: width: 720 }} 720w,{%- endif -%}
+        {%- if media.preview_image.width >= 940 -%}{{ media.preview_image | image_url: width: 940 }} 940w,{%- endif -%}
+        {%- if media.preview_image.width >= 1066 -%}{{ media.preview_image | image_url: width: 1066 }} 1066w,{%- endif -%}
+        {{ media.preview_image | image_url }} {{ media.preview_image.width }}w
+      "
+      data-sizes="(min-width: 1200px) 50vw, 100vw"
+      width="{{ media.preview_image.image_width}}"
+      height="{{ media.preview_image.image_height}}"
+      alt="{{ media.preview_image.alt}}"
+    >
   </div>
 </div>

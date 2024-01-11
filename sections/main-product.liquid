@@ -49,7 +49,7 @@
                     product: product,
                     use_variant: true,
                     show_badges: true,
-                    price_class: 'price--large'
+                    price_class: 'price--product'
                   -%}
                 </div>
                 {%- if product.quantity_price_breaks_configured? -%}
@@ -118,7 +118,10 @@
                 </p>
               {%- when 'description' -%}
                 {%- if product.description != blank -%}
-                  <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
+                  <div
+                    class="product__description{%- if block.settings.text_transform == 'uppercase' -%} product__description--uppercase{%- endif -%}"
+                    {{ block.shopify_attributes }}
+                  >
                     {{ product.description }}
                   </div>
                 {%- endif -%}
@@ -555,22 +558,6 @@
           ],
           "default": "none",
           "label": "Margin bottom"
-        },
-        {
-          "type": "select",
-          "id": "text_font_size",
-          "options": [
-            {
-              "value": "regular",
-              "label": "Regular"
-            },
-            {
-              "value": "large",
-              "label": "Large"
-            }
-          ],
-          "default": "regular",
-          "label": "Font size"
         }
       ]
     },
@@ -742,7 +729,25 @@
     {
       "type": "description",
       "name": "t:sections.main-product.blocks.description.name",
-      "limit": 1
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "text_transform",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "uppercase",
+              "label": "Uppercase"
+            }
+          ],
+          "default": "none",
+          "label": "Text transform"
+        }
+      ]
     },
     {
       "type": "popup",

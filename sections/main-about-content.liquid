@@ -7,32 +7,26 @@
     <div class="about-content__images">
       {%- if section.settings.image != blank -%}
         <div class="">
-          {{
-            section.settings.image
-            | image_url: width: 400
-            | image_tag:
-              width: image_height,
-              height: image_height,
-              class: image_class,
-              sizes: sizes,
-              widths: widths,
-              fetchpriority: fetch_priority
-          }}
+          <img
+            type=""
+            data-lazy
+            data-src="{{ section.settings.image.src | image_url: width: 400 }}"
+            width="{{ section.settings.image.image_width}}"
+            height="{{ section.settings.image.image_height}}"
+            alt="{{ section.settings.image.alt}}"
+          >
         </div>
       {%- endif -%}
       {%- if section.settings.image_2 != blank -%}
         <div class="">
-          {{
-            section.settings.image_2
-            | image_url: width: 400
-            | image_tag:
-              width: image_height,
-              height: image_height,
-              class: image_class,
-              sizes: sizes,
-              widths: widths,
-              fetchpriority: fetch_priority
-          }}
+          <img
+            type=""
+            data-lazy
+            data-src="{{ section.settings.image_2.src | image_url: width: 400 }}"
+            width="{{ section.settings.image_2.image_width}}"
+            height="{{ section.settings.image_2.image_height}}"
+            alt="{{ section.settings.image_2.alt}}"
+          >
         </div>
       {%- endif -%}
     </div>
