@@ -29,11 +29,6 @@
           "settings": {
           }
         },
-        "variant_picker_Jb9w7c": {
-          "type": "variant_picker",
-          "settings": {
-          }
-        },
         "buy_buttons_NVYxiP": {
           "type": "buy_buttons",
           "settings": {
@@ -62,6 +57,11 @@
             "content": "<p>This is the second pop up<\/p>",
             "page": ""
           }
+        },
+        "variant_options_UGA446": {
+          "type": "variant_options",
+          "settings": {
+          }
         }
       },
       "block_order": [
@@ -69,11 +69,11 @@
         "text_rmeVP6",
         "inventory_YHwqwY",
         "quantity_selector_9YLzyD",
-        "variant_picker_Jb9w7c",
         "buy_buttons_NVYxiP",
         "sku_ecECHH",
         "collapsible_tab_Dbqxce",
-        "collapsible_tab_mpDGie"
+        "collapsible_tab_mpDGie",
+        "variant_options_UGA446"
       ],
       "settings": {
         "hide_variants": false
