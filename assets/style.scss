@@ -335,6 +335,9 @@ p a {
   display: flex;
   flex-direction: column;
   height: 100%;
+  &__heading {
+    text-transform: uppercase;
+  }
   .media {
     width: 100%;
   }
@@ -409,6 +412,13 @@ p a {
 .card--horizontal .card__badge,
 .card--horizontal.card--text .card__inner {
   display: none;
+}
+
+.card-button {
+  &__text {
+  padding: 1.2rem;
+  text-decoration: underline;
+  }
 }
 
 /* price

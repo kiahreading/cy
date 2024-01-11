@@ -90,6 +90,12 @@
             {%- endif -%}
           </div>
 
+          <div class="product-type">
+            {%- if card_product.type -%}
+              <span class="caption-with-letter-spacing light">{{ card_product.type }}</span>
+            {%- endif -%}
+          </div>
+
           {%- comment -%}
             {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
             {%- if card_product.quantity_price_breaks_configured? -%}
@@ -98,6 +104,10 @@
               </div>
             {%- endif -%}
           {%- endcomment -%}
+
+          <div class="card-button">
+            <div class="card-button__text">View more</div>
+          </div>
         </div>
       </div>
       <div class="card__badge {{ settings.badge_position }}">
