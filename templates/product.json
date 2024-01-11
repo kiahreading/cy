@@ -60,6 +60,7 @@
         },
         "quantity_selector_9YLzyD": {
           "type": "quantity_selector",
+          "disabled": true,
           "settings": {
           }
         },
