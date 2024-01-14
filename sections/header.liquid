@@ -22,6 +22,8 @@
 
   {%- if request.page_type == 'index' -%}
     <h1 class="header__heading">
+  {%- else -%}
+    <div class="header__heading">
   {%- endif -%}
   <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
     <div class="header__heading-logo-wrapper">
@@ -32,6 +34,8 @@
   </a>
   {%- if request.page_type == 'index' -%}
     </h1>
+  {%- else -%}
+    </div>
   {%- endif -%}
 
   <nav class="header__inline-menu header__inline-menu--right">
@@ -48,28 +52,24 @@
   </nav>
 
   <a
-    style="display: none; position: absolute; bottom: 0; right: 0;"
+    style="display: none"
     href="{{ routes.cart_url }}"
-    class="header__icon header__icon--cart link focus-inset"
     id="cart-icon-bubble"
   >
-    {%- liquid
-      if cart == empty
-        render 'icon-cart-empty'
-      else
-        render 'icon-cart'
-      endif
-    -%}
     <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
-    {%- if cart != empty -%}
-      <div class="cart-count-bubble">
-        {%- if cart.item_count < 100 -%}
-          <span aria-hidden="true">{{ cart.item_count }}</span>
-        {%- endif -%}
-        <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
-      </div>
-    {%- endif -%}
+    <span>Cart ({{ cart.item_count }})</span>
   </a>
+
+  {% if cart != empty and request.page_type != 'cart' %}
+    <a
+      style=""
+      href="{{ routes.cart_url }}"
+      class="fixed-cart-button"
+    >
+      <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+      <span>Cart ({{ cart.item_count }})</span>
+    </a>
+  {% endif %}
 </header>
 
 <script type="application/ld+json">

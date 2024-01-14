@@ -119,7 +119,7 @@
               {%- when 'description' -%}
                 {%- if product.description != blank -%}
                   <div
-                    class="product__description{%- if block.settings.text_transform == 'uppercase' -%} product__description--uppercase{%- endif -%}"
+                    class="product__description{% if block.settings.text_transform == 'uppercase' %} product__description--uppercase{% endif %}"
                     {{ block.shopify_attributes }}
                   >
                     {{ product.description }}

@@ -1,6 +1,19 @@
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import Splide from '@splidejs/splide';
 import LazyLoad from "vanilla-lazyload";
 
+
+// --------------------------------------------------
+// 🐌 General
+// --------------------------------------------------
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.defaults({
+  ease: 'power1.inOut',
+  duration: .5
+})
 
 // --------------------------------------------------
 // 💤 Lazy Loading
@@ -40,3 +53,42 @@ if (bannerCarousel) {
 
   bannerSplide.mount();
 }
+
+// --------------------------------------------------
+// Reveal text scrolltrigger
+// --------------------------------------------------
+
+const texts = gsap.utils.toArray(".reveal");
+
+gsap.set(texts, { autoAlpha: 0 });
+
+texts.forEach((text, i) => {
+
+  const anim = gsap.to(text, {
+    autoAlpha: 1,
+    duration: .6,
+    stagger: 0.0,
+    ease: "power1.inOut",
+    paused: true,
+    delay: .3
+  });
+
+  // Use callbacks to control the state of the animation
+  ScrollTrigger.create({
+    trigger: text,
+    start: "top 90%",
+    once: false,
+    onEnter: self => {
+      // If it's scrolled past, set the state
+      // If it's scrolled to, play it
+      anim.play()
+    }
+  });
+
+  ScrollTrigger.create({
+    trigger: text,
+    start: "top bottom",
+    onLeaveBack: () => anim.pause(0)
+  });
+
+});
