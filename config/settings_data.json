@@ -17,7 +17,7 @@
     "checkout_logo_position": "center",
     "checkout_logo_size": "small",
     "checkout_heading_font": "Lora",
-    "checkout_body_font": "Lora",
+    "checkout_body_font": "Slabo 13px",
     "checkout_accent_color": "#000000",
     "checkout_button_color": "#000000",
     "logo_width": 90,
