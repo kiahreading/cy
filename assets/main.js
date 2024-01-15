@@ -28,6 +28,47 @@ const lazyLoadInstance = new LazyLoad({
   }
 });
 
+
+// --------------------------------------------------
+// Homepage animation
+// --------------------------------------------------
+
+// Check if the user has already visited the homepage in the current session
+const hasVisitedAnyPage = sessionStorage.getItem('hasVisitedAnyPage');
+
+// If it's the first visit, run the animation
+if (!hasVisitedAnyPage) {
+
+  let homePage = document.querySelector('.template-index');
+  if (homePage) {
+    const animatedIntroItems = gsap.utils.toArray('.animated-intro-item'); 
+    gsap.set(animatedIntroItems, { autoAlpha: 0});
+    // Your GSAP timeline animation code goes here
+    const tl = gsap.timeline();
+  
+    // Target the middle div and scale it
+    tl.to('.animated-intro-text', {ease: "power1.inOut", duration: .6, autoAlpha: 1 });
+    tl.to('.animated-intro-text', {ease: "power1.inOut", duration: .6, autoAlpha: 0 }, '+=1.2');
+  
+    // Target the middle div and scale it
+    tl.to('.header__heading.animated-header-item', {ease: "power1.inOut", delay: 0.1, duration: .5, autoAlpha: 1 }, '-=0.3');
+  
+    // Add a delay before targeting the divs before and after the middle div
+    tl.to(gsap.utils.toArray('.header .animated-header-item')[1], {ease: "power1.inOut", duration: .5, autoAlpha: 1 }, '-=0.1');
+    tl.to(gsap.utils.toArray('.header .animated-header-item')[3], {ease: "power1.inOut", duration: .5, autoAlpha: 1 }, '-=0.6');
+  
+    // Add a delay before targeting the divs before and after the previously targeted divs
+    tl.to(gsap.utils.toArray('.header .animated-header-item')[0], {ease: "power1.inOut", duration: .5, autoAlpha: 1 }, '-=0.1');
+    tl.to(gsap.utils.toArray('.header .animated-header-item')[4], {ease: "power1.inOut", duration: .5, autoAlpha: 1 }, '-=0.6');
+  
+    // Add a delay before targeting the divs before and after the previously targeted divs
+    tl.to(gsap.utils.toArray('.animated-intro-item.animated-intro-item--other'), {ease: "power1.inOut", duration: .5, autoAlpha: 1 }, '+=0.4');
+  }
+
+  // Mark the website as visited in the session
+  sessionStorage.setItem('hasVisitedAnyPage', 'true');
+};
+
 // --------------------------------------------------
 // 🎠 Carousels
 // --------------------------------------------------
@@ -58,7 +99,7 @@ if (bannerCarousel) {
 // Reveal text scrolltrigger
 // --------------------------------------------------
 
-const texts = gsap.utils.toArray(".reveal");
+const texts = gsap.utils.toArray(document.querySelectorAll('.reveal, .shopify-policy__container'));
 
 gsap.set(texts, { autoAlpha: 0 });
 
@@ -91,4 +132,86 @@ texts.forEach((text, i) => {
     onLeaveBack: () => anim.pause(0)
   });
 
+});
+
+// --------------------------------------------------
+// Mega menu
+// --------------------------------------------------
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   const megaMenuTriggers = document.querySelectorAll('.mega-menu');
+
+//   megaMenuTriggers.forEach(trigger => {
+//       const targetId = trigger.getAttribute('data-id');
+//       const megaMenu = document.querySelector(`.mega-menu__content[data-id="${targetId}"]`);
+
+//       trigger.addEventListener('mouseenter', () => {
+//           gsap.to(megaMenu, { opacity: 1, display: 'block', duration: 0.3, backgroundColor: '#fff' });
+//           gsap.from(megaMenu.children, { opacity: 0, stagger: 0.1, duration: 0.5 });
+//       });
+
+//       megaMenu.addEventListener('mouseleave', () => {
+//           gsap.to(megaMenu, { opacity: 0, display: 'none', duration: 0.3, backgroundColor: 'transparent' });
+//       });
+//   });
+// });
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const header = document.querySelector('.header');
+  const fauxBackground = document.querySelector('.faux-background');
+  const megaMenuTriggers = document.querySelectorAll('.mega-menu');
+  const megaMenus = document.querySelectorAll('.mega-menu__content');
+
+  megaMenuTriggers.forEach(trigger => {
+      const targetId = trigger.getAttribute('data-id');
+      const megaMenu = document.querySelector(`.mega-menu__content[data-id="${targetId}"]`);
+
+      let isMouseOverTrigger = false;
+      let isMouseOverMenu = false;
+
+      trigger.addEventListener('mouseenter', () => {
+          isMouseOverTrigger = true;
+          showMegaMenu();
+      });
+
+      trigger.addEventListener('mouseleave', () => {
+          isMouseOverTrigger = false;
+          hideMegaMenu();
+      });
+
+      megaMenu.addEventListener('mouseenter', () => {
+          isMouseOverMenu = true;
+          showMegaMenu();
+      });
+
+      megaMenu.addEventListener('mouseleave', () => {
+          isMouseOverMenu = false;
+          hideMegaMenu();
+      });
+
+      function showMegaMenu() {
+          if (isMouseOverTrigger || isMouseOverMenu) {
+              const tl = gsap.timeline();
+              // tl.to(header, {ease: "power1.inOut", duration: 0.3, backgroundColor: '#fff' });
+               tl.to(fauxBackground, {ease: "power1.inOut", duration: 0.3, opacity: 1 });
+              tl.to(megaMenu, {ease: "power1.inOut", opacity: 1, display: 'block', duration: 0.3}, '-=.3');
+
+              // gsap.to(header, { duration: 0.3, backgroundColor: '#fff' });
+              // gsap.to(megaMenu, { opacity: 1, display: 'block', duration: 0.3, backgroundColor: '#fff' });
+              // gsap.from(megaMenu.children, { opacity: 0, stagger: 0.1, duration: 0.5 });
+          }
+      }
+
+      function hideMegaMenu() {
+          if (!isMouseOverTrigger && !isMouseOverMenu) {
+            const tl = gsap.timeline();
+              tl.to(fauxBackground, {ease: "power1.inOut", duration: 0.3, opacity: 0 });
+              tl.to(megaMenu, { opacity: 0, display: 'none', duration: 0.3}, '-=.3');
+          }
+      }
+  });
 });

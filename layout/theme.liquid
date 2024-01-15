@@ -41,6 +41,29 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
+    <script>
+      document.documentElement.classList.add('js');
+      const hasVisitedAnyPage = sessionStorage.getItem('hasVisitedAnyPage');
+      if (!hasVisitedAnyPage) {
+        // If not, insert CSS dynamically
+        var style = document.createElement('style');
+        style.innerHTML = `
+              .js .template-index .animated-intro-item {
+                opacity: 0;
+              }
+          `;
+        document.head.appendChild(style);
+      } else {
+        // If yes, insert CSS dynamically
+        var style = document.createElement('style');
+        style.innerHTML = `
+              .js .template-index .home-content__text.animated-intro-item.animated-intro-text {
+                opacity: 0;
+              }
+          `;
+        document.head.appendChild(style);
+      }
+    </script>
   </head>
 
   <body class="template-{{ template | handleize }}">

@@ -1,6 +1,10 @@
 <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
 
+<h1 class="visually-hidden">
+  {{ page.title | escape }}
+</h1>
+
 <cart-items class="{% if cart == empty %} is-empty{% endif %}">
   <div class="">
     <div class="title-wrapper-with-link">

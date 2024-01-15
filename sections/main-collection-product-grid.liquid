@@ -1,4 +1,4 @@
-<div class="">
+<div>
   {%- paginate collection.products by section.settings.products_per_page -%}
     <div class="">
       <div
@@ -28,7 +28,7 @@
             >
               {%- for product in collection.products -%}
                 <li
-                  class="grid__item"
+                  class="grid__item reveal"
                 >
                   {% render 'card-product',
                     card_product: product,

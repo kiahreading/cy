@@ -1,3 +1,14 @@
+{% if cart != empty and request.page_type != 'cart' %}
+  <a
+    style=""
+    href="{{ routes.cart_url }}"
+    class="fixed-cart-button animated-intro-item animated-intro-item--other"
+  >
+    <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+    <span>Cart ({{ cart.item_count }})</span>
+  </a>
+{% endif %}
+
 <footer class="footer">
   {%- if section.blocks.size > 0 -%}
     <div class="footer__content">
@@ -9,7 +20,7 @@
             {%- case block.type -%}
               {%- when 'link_list' -%}
                 {%- if block.settings.menu != blank -%}
-                  <ul class="footer-block__details-content">
+                  <ul class="footer-block__details-content animated-intro-item animated-intro-item--other">
                     {%- for link in block.settings.menu.links -%}
                       <li>
                         <a
