@@ -100,7 +100,7 @@ p a {
 [data-lazy] {
   visibility: hidden;
   opacity: 0;
-  transition: opacity .5s ease-out;
+  transition: opacity .6s ease-out;
 }
 
 // .image-wrap {
@@ -157,10 +157,6 @@ p a {
   justify-content: space-between;
 }
 
-.list-menu__item {
-
-}
-
 .mega-menu__content {
   display: none;
   position: absolute;
@@ -170,6 +166,31 @@ p a {
   width: 100%;
   background-color: var(--white);
   opacity: 0;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.mega-menu__list {
+ display: flex;
+ justify-content: space-between;
+ width: 50%;
+ margin: 0 auto;
+}
+
+.mega-menu__link {
+  text-transform: uppercase;
+  padding: .3rem;
+  display: block;
+}
+
+.mega-menu__link--level-2 {
+  font-size: var(--medium-font-size);
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.mega-menu__view-all {
+  font-size: 1rem;
 }
 
 .fixed-cart-button {

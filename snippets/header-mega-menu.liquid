@@ -45,7 +45,9 @@
                     aria-current="page"
                   {% endif %}
                 >
-                  {{ childlink.title | escape }}
+                  {{ childlink.title | escape -}}
+                  <br>
+                  <span class="mega-menu__view-all">View all</span>
                 </a>
                 {%- if childlink.links != blank -%}
                   <ul class="list-unstyled" role="list">
