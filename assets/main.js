@@ -198,43 +198,43 @@ document.addEventListener("DOMContentLoaded", function () {
 // Product pop-up modal
 // --------------------------------------------------
 
-document.addEventListener('DOMContentLoaded', function () {
-  const modalButtons = document.querySelectorAll('.product-popup-modal__button');
+// document.addEventListener('DOMContentLoaded', function () {
+//   const modalButtons = document.querySelectorAll('.product-popup-modal__button');
 
-  modalButtons.forEach(function (button) {
-      button.addEventListener('click', function () {
-          const modalId = button.getAttribute('data-id');
-          openModal(modalId);
-      });
-  });
+//   modalButtons.forEach(function (button) {
+//       button.addEventListener('click', function () {
+//           const modalId = button.getAttribute('data-id');
+//           openModal(modalId);
+//       });
+//   });
 
-  function openModal(modalId) {
-      const modal = document.querySelector(`[data-id="${modalId}"]`);
-      const modalText = modal.querySelector('.product-popup-modal__content');
+//   function openModal(modalId) {
+//       const modal = document.querySelector(`[data-id="${modalId}"]`);
+//       const modalText = modal.querySelector('.product-popup-modal');
 
-      modal.style.display = 'block';
-      gsap.to(modalText, { scale: 1, duration: 0.5 });
+//       modal.style.display = 'block';
+//       gsap.to(modalText, { scale: 1, duration: 0.5 });
 
-      // Close modal when clicking outside the modal content
-      modal.addEventListener('click', function (event) {
-          if (event.target === modal) {
-              closeModal(modalId);
-          }
-      });
+//       // Close modal when clicking outside the modal content
+//       modal.addEventListener('click', function (event) {
+//           if (event.target === modal) {
+//               closeModal(modalId);
+//           }
+//       });
 
-      // Prevent scrolling on the body
-      document.body.style.overflow = 'hidden';
-  }
+//       // Prevent scrolling on the body
+//       document.body.style.overflow = 'hidden';
+//   }
 
-  function closeModal(modalId) {
-      const modal = document.querySelector(`[data-id="${modalId}"]`);
-      const modalText = modal.querySelector('.product-popup-modal__content');
+//   function closeModal(modalId) {
+//       const modal = document.querySelector(`[data-id="${modalId}"]`);
+//       const modalText = modal.querySelector('.product-popup-modal');
 
-      gsap.to(modalText, { scale: 0, duration: 0.5, onComplete: function () {
-          modal.style.display = 'none';
-      }});
+//       gsap.to(modalText, { scale: 0, duration: 0.5, onComplete: function () {
+//           modal.style.display = 'none';
+//       }});
 
-      // Allow scrolling on the body
-      document.body.style.overflow = 'auto';
-  }
-});
+//       // Allow scrolling on the body
+//       document.body.style.overflow = 'auto';
+//   }
+// });
