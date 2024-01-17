@@ -74,6 +74,20 @@
           "settings": {
             "text_margin_bottom": "none"
           }
+        },
+        "popup_3F8bYW": {
+          "type": "popup",
+          "settings": {
+            "text": "Button 1",
+            "content": "<p>This is content for text one<\/p>"
+          }
+        },
+        "popup_wTFGLN": {
+          "type": "popup",
+          "settings": {
+            "text": "Button 2",
+            "content": "<p>This is content for button 2<\/p>"
+          }
         }
       },
       "block_order": [
@@ -87,7 +101,9 @@
         "variant_picker_6yfWpM",
         "quantity_selector_9YLzyD",
         "buy_buttons_NVYxiP",
-        "sku_ecECHH"
+        "sku_ecECHH",
+        "popup_3F8bYW",
+        "popup_wTFGLN"
       ],
       "settings": {
         "hide_variants": false
