@@ -138,28 +138,6 @@ texts.forEach((text, i) => {
 // Mega menu
 // --------------------------------------------------
 
-// document.addEventListener("DOMContentLoaded", function () {
-//   const megaMenuTriggers = document.querySelectorAll('.mega-menu');
-
-//   megaMenuTriggers.forEach(trigger => {
-//       const targetId = trigger.getAttribute('data-id');
-//       const megaMenu = document.querySelector(`.mega-menu__content[data-id="${targetId}"]`);
-
-//       trigger.addEventListener('mouseenter', () => {
-//           gsap.to(megaMenu, { opacity: 1, display: 'block', duration: 0.3, backgroundColor: '#fff' });
-//           gsap.from(megaMenu.children, { opacity: 0, stagger: 0.1, duration: 0.5 });
-//       });
-
-//       megaMenu.addEventListener('mouseleave', () => {
-//           gsap.to(megaMenu, { opacity: 0, display: 'none', duration: 0.3, backgroundColor: 'transparent' });
-//       });
-//   });
-// });
-
-
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
   const header = document.querySelector('.header');
   const fauxBackground = document.querySelector('.faux-background');
@@ -214,4 +192,49 @@ document.addEventListener("DOMContentLoaded", function () {
           }
       }
   });
+});
+
+// --------------------------------------------------
+// Product pop-up modal
+// --------------------------------------------------
+
+document.addEventListener('DOMContentLoaded', function () {
+  const modalButtons = document.querySelectorAll('.product-popup-modal__button');
+
+  modalButtons.forEach(function (button) {
+      button.addEventListener('click', function () {
+          const modalId = button.getAttribute('data-id');
+          openModal(modalId);
+      });
+  });
+
+  function openModal(modalId) {
+      const modal = document.querySelector(`[data-id="${modalId}"]`);
+      const modalText = modal.querySelector('.product-popup-modal__content');
+
+      modal.style.display = 'block';
+      gsap.to(modalText, { scale: 1, duration: 0.5 });
+
+      // Close modal when clicking outside the modal content
+      modal.addEventListener('click', function (event) {
+          if (event.target === modal) {
+              closeModal(modalId);
+          }
+      });
+
+      // Prevent scrolling on the body
+      document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(modalId) {
+      const modal = document.querySelector(`[data-id="${modalId}"]`);
+      const modalText = modal.querySelector('.product-popup-modal__content');
+
+      gsap.to(modalText, { scale: 0, duration: 0.5, onComplete: function () {
+          modal.style.display = 'none';
+      }});
+
+      // Allow scrolling on the body
+      document.body.style.overflow = 'auto';
+  }
 });

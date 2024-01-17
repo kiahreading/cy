@@ -366,6 +366,7 @@
                   {{ block.shopify_attributes }}
                 >
                   <button
+                    data-id="{{ block.id }}"
                     id="ProductPopup-{{ block.id }}"
                     class="product-popup-modal__button link"
                     type="button"
@@ -401,7 +402,12 @@
 
     {% assign popups = section.blocks | where: 'type', 'popup' %}
     {%- for block in popups -%}
-      <modal-dialog id="PopupModal-{{ block.id }}" class="product-popup-modal" {{ block.shopify_attributes }}>
+      <modal-dialog
+        data-id="{{ block.id }}"
+        id="PopupModal-{{ block.id }}"
+        class="product-popup-modal"
+        {{ block.shopify_attributes }}
+      >
         <div
           role="dialog"
           aria-label="{{ block.settings.text }}"
