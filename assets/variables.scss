@@ -58,33 +58,15 @@
 @include for-large-tablet-portrait-below {
   :root {
     // /* Font sizes */
-    // --tiny-font-size: .7rem;
-    // --xx-small-font-size: .85rem;
-    // --x-small-font-size: 1rem;
-    // --small-font-size: 1.1rem;
-    // --medium-font-size: clamp(1.2rem, 1.057rem + 0.381vw, 1.4rem);
-    // --preheading-font-size: 1.2rem;
-    // --large-font-size: clamp(1.4rem, 1.257rem + 0.381vw, 1.6rem);
-    // --x-large-font-size: clamp(1.8rem, 1.229rem + 1.524vw, 2.6rem);
-    // --xx-large-font-size: clamp(2.2rem, 1.057rem + 3.048vw, 3.8rem);
-    // --xxx-large-font-size: clamp(2.5rem, 1.429rem + 2.857vw, 4rem);
-    // --huge-font-size: clamp(3rem, 1.929rem + 2.857vw, 4.5rem); /* Blog page titles */ 
 
     // /* Vertical margins */
-    // --xx-small-vertical-margin: .13rem;
-    // --x-small-vertical-margin: .66rem;
-    // --small-vertical-margin: 2rem;
-    // --medium-vertical-margin: 3.3rem;
-    // --large-vertical-margin: 6rem;
-    // --x-large-vertical-margin: 8rem;
-    // --xx-large-vertical-margin: 10.5rem;
 
     // /* Widths, paddings, gaps */
-    // /* --vh: 1; */
-    // --medium-grid-gap: clamp(1.8rem, 4.5vw, 4.5rem);
-    // --large-grid-gap: calc(var(--lr-page-padding)*3);
     --lr-page-padding: 32px;
     --small-lr-page-padding: 32px;
+    --wide-lr-page-padding: 3rem;
+    --medium-grid-gap: 3rem;
+    --x-large-grid-gap: 5rem;
   }
 }
 
@@ -93,37 +75,13 @@
 @media (max-width: 599px) {
   :root {
     /* Font sizes */
-    // --tiny-font-size: 0.65625rem;     //px
-    // --xx-small-font-size: 0.6875rem;  //px
-    // --x-small-font-size: 0.75rem;     //px
-    // --small-font-size: 0.78125rem;    //px
-    // --medium-font-size: 0.84375rem;   //px
-    // --large-font-size: 0.9375rem;     //px
-    // --x-large-font-size: 1.1875rem;   //px
-    // --xx-large-font-size: 1.4375rem;  //px
-    // --xxx-large-font-size: 1.8rem;  //px
-    // --xxxx-large-font-size: 2.8rem;  //px
-    // --huge-font-size: 3.3rem;      //px
   
     // /* Vertical margins */
-    // --xx-small-vertical-margin: 2.1rem;   //  42px
-    // --x-small-vertical-margin: 3.1625rem;   //  65px
-    // --small-vertical-margin: 3.625rem;      //  74px
-    // --medium-vertical-margin: 4.875rem;     //  110px
-    // --large-vertical-margin: 5.1rem;          //  128px
-    // --x-large-vertical-margin: 6rem;     //  140px
-    // --xx-large-vertical-margin: 7rem;       //  144px
-    // --xxx-large-vertical-margin: 12rem;       
 
     // /* Widths, paddings, gaps */
-    // /* --vh: 1; */
-    // --page-width: 1324px;
-    // --large-page-width: 1376px;
-    // --lr-page-padding: 16px;
-    // --small-lr-page-padding: 16px;
-    // --x-small-grid-gap: .8rem;
-    // --small-grid-gap: 1.5rem;
-    // --medium-grid-gap: 3rem;
-    // --large-grid-gap: 5rem;
+    --lr-page-padding: 11px;
+    --small-lr-page-padding: 11px;
+    --wide-lr-page-padding: 2rem;
+    --x-large-grid-gap: 4rem;
   }
 }

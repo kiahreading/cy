@@ -9,6 +9,11 @@
   <div class="header__wrapper">
     <div class="faux-background"></div>
     <nav class="header__inline-menu header__inline-menu--left">
+      <div class="mobile-header-menu">
+        <div class="mobile-header-menu__menu-item mobile-header-menu__menu-item--left">
+          <div class="mobile-header-menu__menu-button animated-intro-item animated-intro-item--other">Menu</div>
+        </div>
+      </div>
       {% if total_links >= 1 %}
         <ul class="list-menu list-menu--inline" role="list">
           {% for link in section.settings.menu.links limit: half_links %}
@@ -40,6 +45,18 @@
     {%- endif -%}
 
     <nav class="header__inline-menu header__inline-menu--right">
+      <div class="mobile-header-menu">
+        <div class="mobile-header-menu__menu-item mobile-header-menu__menu-item--right">
+          <a
+            href="{{ routes.cart_url }}"
+            id="cart-icon-bubble"
+            class="animated-intro-item animated-intro-item--other"
+          >
+            <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+            <span>Cart ({{ cart.item_count }})</span>
+          </a>
+        </div>
+      </div>
       {% if total_links > 1 %}
         <ul class="list-menu list-menu--inline" role="list">
           {% for link in section.settings.menu.links offset: half_links %}
@@ -51,16 +68,6 @@
         </ul>
       {% endif %}
     </nav>
-
-    <a
-      style="display: none"
-      href="{{ routes.cart_url }}"
-      id="cart-icon-bubble"
-      class="animated-intro-item animated-intro-item--other"
-    >
-      <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
-      <span>Cart ({{ cart.item_count }})</span>
-    </a>
   </div>
 </header>
 

@@ -100,7 +100,7 @@ if (bannerCarousel) {
 // --------------------------------------------------
 
 const texts = gsap.utils.toArray(document.querySelectorAll('.reveal, .shopify-policy__container'));
-
+let mm = gsap.matchMedia();
 gsap.set(texts, { autoAlpha: 0 });
 
 texts.forEach((text, i) => {
@@ -114,16 +114,32 @@ texts.forEach((text, i) => {
     delay: .3
   });
 
-  // Use callbacks to control the state of the animation
-  ScrollTrigger.create({
-    trigger: text,
-    start: "top 90%",
-    once: false,
-    onEnter: self => {
-      // If it's scrolled past, set the state
-      // If it's scrolled to, play it
-      anim.play()
-    }
+  mm.add("(min-width: 800px)", () => {
+    // Use callbacks to control the state of the animation
+    ScrollTrigger.create({
+      trigger: text,
+      start: "top 90%",
+      once: false,
+      onEnter: self => {
+        // If it's scrolled past, set the state
+        // If it's scrolled to, play it
+        anim.play()
+      }
+    });
+  });
+
+  mm.add("(max-width: 799px)", () => {
+    // Use callbacks to control the state of the animation
+    ScrollTrigger.create({
+      trigger: text,
+      start: "top 95%",
+      once: false,
+      onEnter: self => {
+        // If it's scrolled past, set the state
+        // If it's scrolled to, play it
+        anim.play()
+      }
+    });
   });
 
   ScrollTrigger.create({
@@ -238,3 +254,47 @@ document.addEventListener("DOMContentLoaded", function () {
 //       document.body.style.overflow = 'auto';
 //   }
 // });
+
+const container = document.querySelector('.appearing-container');
+const hereIAmText = 'here i am';
+let isCursorInside = true;
+
+// Function to create and animate the "here i am" div
+function createHereIAmDiv() {
+  const div = document.createElement('div');
+  div.classList.add('here-i-am');
+  div.textContent = hereIAmText;
+  container.appendChild(div);
+
+  const randomX = Math.random() * (window.innerWidth - 200);
+  const randomY = Math.random() * (window.innerHeight - 50);
+
+  gsap.set(div, { x: randomX, y: randomY });
+
+  gsap.to(div, { duration: 1, opacity: 1 });
+}
+
+// Function to handle cursor enter and leave events
+function handleCursorActivity() {
+  document.addEventListener('mouseenter', () => {
+    isCursorInside = true;
+    gsap.to('.here-i-am', { duration: 1, opacity: 0, onComplete: () => {
+      document.querySelectorAll('.here-i-am').forEach((div) => {
+        container.removeChild(div);
+      });
+    } });
+  });
+
+  document.addEventListener('mouseleave', () => {
+    isCursorInside = false;
+  });
+
+  setInterval(() => {
+    if (!isCursorInside) {
+      createHereIAmDiv();
+    }
+  }, 5000);
+}
+
+// Start listening for cursor activity
+handleCursorActivity();
