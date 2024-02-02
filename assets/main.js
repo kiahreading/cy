@@ -255,6 +255,10 @@ document.addEventListener("DOMContentLoaded", function () {
 //   }
 // });
 
+// --------------------------------------------------
+// Appearing content
+// --------------------------------------------------
+
 const container = document.querySelector('.appearing-container');
 const hereIAmText = 'here i am';
 let isCursorInside = true;
@@ -298,3 +302,36 @@ function handleCursorActivity() {
 
 // Start listening for cursor activity
 handleCursorActivity();
+
+// --------------------------------------------------
+// Mobile menu
+// --------------------------------------------------
+
+document.addEventListener('DOMContentLoaded', function () {
+  const mobileMenuBtn = document.querySelector('.mobile-header-menu__menu-button');
+  const modal = document.querySelector('.mobile-menu-modal');
+  const modalText = modal.querySelector('.mobile-menu-modal__text');
+
+  let isModalOpen = false;
+
+  mobileMenuBtn.addEventListener('click', () => {
+      if (isModalOpen) {
+        // Close modal
+        gsap.to(modalText, { opacity: 0, duration: 0.5, onComplete: function () {
+          modal.style.display = 'none';
+        }});
+        // Allow scrolling on the body
+        document.body.style.overflow = 'auto';
+      } else {
+        // Open modal
+        modal.style.display = 'flex';
+        gsap.to(modalText, { opacity: 1, duration: 0.5 });
+        // Prevent scrolling on the body
+        document.body.style.overflow = 'hidden';
+      }
+  
+      // Toggle modal state
+      isModalOpen = !isModalOpen;
+    });
+
+});
