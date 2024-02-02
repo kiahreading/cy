@@ -136,6 +136,7 @@ p a {
     margin: 0 16vw;
     @include for-small-tablet-below {
       padding: 1rem;
+      margin: 0 5vw;
     }
   }
   &__heading-logo-wrapper {
@@ -2155,16 +2156,16 @@ input[type=number] {
   &__main {
     text-transform: uppercase;
     text-align: center;
-    padding-top: 10rem;
     li {
       padding: .6rem;
     }
   }
   &__footer {
     display: flex;
-    margin-top: 10rem;
+    text-align: center;
+    font-size: var(--small);
     li {
-      padding: .8rem;
+      padding: .4rem;
     }
   }
 
