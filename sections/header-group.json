@@ -5,6 +5,9 @@
     "header": {
       "type": "header",
       "settings": {
+        "menu": "main-menu",
+        "mobilemenu": "main-menu",
+        "mobilefootermenu": "footer"
       }
     }
   },
