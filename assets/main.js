@@ -260,7 +260,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // --------------------------------------------------
 
 const container = document.querySelector('.appearing-container');
-const hereIAmText = 'here i am';
+const hereIAmText = 'I\'m patient as the earth';
 let isCursorInside = true;
 
 // Function to create and animate the "here i am" div
