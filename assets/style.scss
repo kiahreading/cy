@@ -997,6 +997,10 @@ a.product__text {
   text-align: center;
 }
 
+.product--no-media shopify-payment-terms {
+  display: none;
+}
+
 .product--no-media .product__media-wrapper,
 .product--no-media .product__info-wrapper {
   padding: 0;
@@ -2154,6 +2158,7 @@ input[type=number] {
   justify-content: center;
   align-items: center;
   &__main {
+    padding-top: 4rem;
     text-transform: uppercase;
     text-align: center;
     li {
@@ -2161,9 +2166,9 @@ input[type=number] {
     }
   }
   &__footer {
-    display: flex;
+    margin-top: 4rem;
     text-align: center;
-    font-size: var(--small);
+    font-size: .8rem;
     li {
       padding: .4rem;
     }
