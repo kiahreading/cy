@@ -997,10 +997,6 @@ a.product__text {
   text-align: center;
 }
 
-.product--no-media shopify-payment-terms {
-  display: none;
-}
-
 .product--no-media .product__media-wrapper,
 .product--no-media .product__info-wrapper {
   padding: 0;
@@ -2174,4 +2170,10 @@ input[type=number] {
     }
   }
 
+}
+
+/* Installments
+---------------------------------------------- */
+.installment {
+  display: none
 }
