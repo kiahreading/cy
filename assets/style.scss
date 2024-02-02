@@ -2203,9 +2203,9 @@ input[type=number] {
     align-items: center;
     justify-content: center;
     @include for-small-tablet-below {
-      padding: 4rem var(--lr-page-padding) 0rem var(--lr-page-padding);
+      padding: 6rem var(--lr-page-padding) 0rem var(--lr-page-padding);
     }
-    
+
     .mega-menu__list {
      display: flex;
      flex-direction: column;
