@@ -74,8 +74,25 @@
 <div class="mobile-menu-modal">
   <div class="mobile-menu-modal__text">
     <nav>
-      <ul class="" role="list">
+      <ul class="mobile-menu-modal__main" role="list">
         {% for link in section.settings.mobilemenu.links %}
+          <li>
+            <a
+              href="{{ link.url }}"
+            >
+              <span
+                {%- if link.child_active %}
+                  class="header__active-menu-item"
+                {% endif %}
+              >
+                {{- link.title | escape -}}
+              </span>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+      <ul class="mobile-menu-modal__footer" role="list">
+        {% for link in section.settings.mobilefootermenu.links %}
           <li>
             <a
               href="{{ link.url }}"
@@ -151,6 +168,12 @@
       "id": "mobilemenu",
       "default": "main-menu",
       "label": "Mobile menu"
+    },
+    {
+      "type": "link_list",
+      "id": "mobilefootermenu",
+      "default": "main-menu",
+      "label": "Mobile footer menu"
     }
   ]
 }
