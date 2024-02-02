@@ -6,7 +6,7 @@
       "type": "header",
       "settings": {
         "menu": "main-menu",
-        "mobilemenu": "main-menu",
+        "mobilemenu": "mobile-menu",
         "mobilefootermenu": "footer"
       }
     }
