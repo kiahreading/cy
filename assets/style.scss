@@ -210,11 +210,13 @@ p a {
 }
 
 .fixed-cart-button {
+  z-index: 10;
   position: fixed;
   bottom: 0;
   right: 0;
   padding: var(--lr-page-padding);
   text-transform: uppercase;
+  display: block;
   @include for-small-tablet-below {
     display: none;
   }
@@ -301,6 +303,7 @@ p a {
   .footer {
     position: absolute;
     bottom: 0;
+    z-index: 10;
   }
 }
 .space-content {
@@ -2092,7 +2095,7 @@ input[type=number] {
 
 /* policy
 ---------------------------------------------- */
-.template- {
+.template-, .template-page-policy {
   .screen-height {
     min-height: 100vh;
     display: flex;
@@ -2109,15 +2112,35 @@ input[type=number] {
     @include for-small-tablet-below {
       padding: 10rem var(--lr-page-padding) 4rem;
     }
+    strong {
+      margin-bottom: 1rem;
+    }
+    p {
+      margin-bottom: 1.5rem;
+    }
+    h2 {
+      font-size: var(--medium-font-size);
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
   }
   &__title {
     font-size: var(--medium-font-size);
-    margin-bottom: 2rem;
-  }
-  strong {
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    @include for-small-tablet-below {
+      margin-bottom: 2rem;
+    }
   }
 }
+.shopify-policy__container {
+  max-width: 560px;
+  max-width: 65ch;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px
+}
+
 
 /* appearing text
 ---------------------------------------------- */
@@ -2132,22 +2155,6 @@ input[type=number] {
   z-index: 99;
   position: absolute;
 }
-/* policy
----------------------------------------------- */
-
-// .container {
-//   position: relative;
-//   width: 100vw;
-//   height: 100vh;
-// }
-// .here-i-am {
-//   position: absolute;
-//   display: none;
-//   background-color: #3498db;
-//   color: #fff;
-//   padding: 10px;
-//   border-radius: 5px;
-// }
 
 /* Mobile menu modal
 ---------------------------------------------- */

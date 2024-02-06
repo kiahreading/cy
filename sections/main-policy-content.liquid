@@ -1,13 +1,11 @@
-<div class="shopify-policy__container" style="opacity: 1; visibility: inherit;">
+<div class="shopify-policy__container reveal">
   <div class="shopify-policy__title">
     <h1>{{ page.title | escape }}</h1>
   </div>
 
   <div class="shopify-policy__body">
     <div class="rte">
-      {%- if section.settings.page.content != blank -%}
-        {{ section.settings.page.content }}
-      {%- endif -%}
+      {{ page.content }}
     </div>
   </div>
 </div>
