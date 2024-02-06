@@ -1,0 +1,31 @@
+<div class="shopify-policy__container" style="opacity: 1; visibility: inherit;">
+  <div class="shopify-policy__title">
+    <h1>{{ page.title | escape }}</h1>
+  </div>
+
+  <div class="shopify-policy__body">
+    <div class="rte">
+      {%- if section.settings.page.content != blank -%}
+        {{ section.settings.page.content }}
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.page.name",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "page",
+      "id": "page",
+      "label": "t:sections.page.settings.page.label"
+    }
+  ]
+}
+{% endschema %}
