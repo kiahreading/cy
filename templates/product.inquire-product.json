@@ -63,16 +63,16 @@
           "settings": {
           }
         },
+        "inquire_popup_w69P8q": {
+          "type": "inquire_popup",
+          "settings": {
+          }
+        },
         "sku_ecECHH": {
           "type": "sku",
           "disabled": true,
           "settings": {
             "text_margin_bottom": "none"
-          }
-        },
-        "inquire_popup_w69P8q": {
-          "type": "inquire_popup",
-          "settings": {
           }
         },
         "popup_3F8bYW": {
@@ -107,8 +107,8 @@
         "inventory_YHwqwY",
         "variant_picker_6yfWpM",
         "quantity_selector_9YLzyD",
-        "sku_ecECHH",
         "inquire_popup_w69P8q",
+        "sku_ecECHH",
         "popup_3F8bYW",
         "popup_wTFGLN",
         "popup_mMFRbR"
