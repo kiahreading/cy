@@ -30,6 +30,7 @@
         },
         "price_6zrKUN": {
           "type": "price",
+          "disabled": true,
           "settings": {
           }
         },
