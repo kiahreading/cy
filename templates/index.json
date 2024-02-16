@@ -1,7 +1,20 @@
 {
   "sections": {
     "main": {
-      "type": "main-home"
+      "type": "main-home",
+      "blocks": {
+        "text_dfYtKa": {
+          "type": "text",
+          "settings": {
+            "text": "I’M PATIENT AS THE EARTH\nI ONLY TURN ONE WAY"
+          }
+        }
+      },
+      "block_order": [
+        "text_dfYtKa"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
