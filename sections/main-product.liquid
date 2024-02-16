@@ -389,7 +389,7 @@
                     Inquire
                   </button>
                 </modal-opener>
-                {% if request.query_string contains 'contact_posted=true#ContactForm' %}
+                {% if request.url contains 'contact_posted=true#ContactForm' %}
                   <div>Thank you for your message, we will be in touch shortly.</div>
                 {% endif %}
             {%- endcase -%}
