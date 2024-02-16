@@ -6,6 +6,7 @@
   <div class="home-content__text animated-intro-item animated-intro-text">
     I’M PATIENT AS THE EARTH<br>
     I ONLY TURN ONE WAY
+    {{ section.settings.text }}
   </div>
 </div>
 
@@ -18,18 +19,11 @@
     "templates": ["index"],
     "groups": ["aside"]
   },
-  "blocks": [
+  "settings": [
     {
-      "type": "text",
-      "name": "Text",
-      "limit": 20,
-      "settings": [
-        {
-          "type": "textarea",
-          "id": "text",
-          "label": "Text"
-        }
-      ]
+      "type": "textarea",
+      "id": "text",
+      "label": "Text"
     }
   ]
 }
