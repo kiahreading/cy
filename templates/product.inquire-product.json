@@ -70,6 +70,11 @@
             "text_margin_bottom": "none"
           }
         },
+        "inquire_popup_w69P8q": {
+          "type": "inquire_popup",
+          "settings": {
+          }
+        },
         "popup_3F8bYW": {
           "type": "popup",
           "settings": {
@@ -90,11 +95,6 @@
             "text": "Return Policy",
             "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<\/p>"
           }
-        },
-        "inquire_popup_w69P8q": {
-          "type": "inquire_popup",
-          "settings": {
-          }
         }
       },
       "block_order": [
@@ -108,10 +108,10 @@
         "variant_picker_6yfWpM",
         "quantity_selector_9YLzyD",
         "sku_ecECHH",
+        "inquire_popup_w69P8q",
         "popup_3F8bYW",
         "popup_wTFGLN",
-        "popup_mMFRbR",
-        "inquire_popup_w69P8q"
+        "popup_mMFRbR"
       ],
       "settings": {
         "hide_variants": false
