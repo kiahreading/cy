@@ -95,12 +95,6 @@
             "text": "Return Policy",
             "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<\/p>"
           }
-        },
-        "inquire_Y6Q6J8": {
-          "type": "inquire",
-          "disabled": true,
-          "settings": {
-          }
         }
       },
       "block_order": [
@@ -117,11 +111,10 @@
         "sku_ecECHH",
         "popup_3F8bYW",
         "popup_wTFGLN",
-        "popup_mMFRbR",
-        "inquire_Y6Q6J8"
+        "popup_mMFRbR"
       ],
       "settings": {
-        "hide_variants": false
+        "hide_variants": true
       }
     },
     "related-products": {
