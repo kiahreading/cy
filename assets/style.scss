@@ -1235,15 +1235,21 @@ a.product__text {
 .product-popup-modal__button {
   padding: 0.2rem;
   min-height: 4.4rem;
-  text-underline-offset: 0.3rem;
+  // text-underline-offset: 0.3rem;
   text-decoration-thickness: 0.1rem;
   transition: text-decoration-thickness var(--duration-short) ease;
   letter-spacing: inherit;
+  &--inquire {
+    margin-top: .5rem;
+    margin-bottom: 1rem;
+    letter-spacing: inherit;
+    text-decoration: underline;
+  }
 }
 
-.product-popup-modal__button:hover {
-  text-decoration-thickness: 0.2rem;
-}
+// .product-popup-modal__button:hover {
+//   text-decoration-thickness: 0.2rem;
+// }
 
 .product-popup-modal__content-info {
   padding-right: 4.4rem;
