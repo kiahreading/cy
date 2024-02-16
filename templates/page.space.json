@@ -3,6 +3,13 @@
     "main": {
       "type": "main-space-content",
       "blocks": {
+        "slide_BTCc37": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/t-selin-erkan-vihkDSPuMdM-unsplash.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/yana-hurska-_MRt6nQ_WKw-unsplash.jpg"
+          }
+        },
         "cf10f528-6024-4445-a78f-c60681bf843f": {
           "type": "slide",
           "settings": {
@@ -22,20 +29,13 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/liam-mcgarry-7ZuTyZfKtQo-unsplash.jpg"
           }
-        },
-        "slide_BTCc37": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/t-selin-erkan-vihkDSPuMdM-unsplash.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/yana-hurska-_MRt6nQ_WKw-unsplash.jpg"
-          }
         }
       },
       "block_order": [
+        "slide_BTCc37",
         "cf10f528-6024-4445-a78f-c60681bf843f",
         "3648c491-ee4e-4c89-9ee1-f65c466c131e",
-        "4ed87b83-bf2b-4eea-951b-916c7207fefc",
-        "slide_BTCc37"
+        "4ed87b83-bf2b-4eea-951b-916c7207fefc"
       ],
       "settings": {
         "space_title": "Event space rental",
