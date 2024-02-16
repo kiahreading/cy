@@ -483,7 +483,7 @@
                 <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
                   {{ 'templates.contact.form.post_success' | t }}
                 </h2>
-                {%- elseif form.errors -%}
+              {%- elsif form.errors -%}
                 <div class="form__message">
                   <h2 class="form-status caption-large text-body" role="alert" tabindex="-1" autofocus>
                     {{ 'templates.contact.form.error_heading' | t }}
