@@ -3,7 +3,7 @@
     "main": {
       "type": "main-home",
       "settings": {
-        "text": "I’M PATIENT AS THE EARTH\nI ONLY TURN ONE WAY"
+        "text": "<p>I’M PATIENT AS THE EARTH<br\/>I ONLY TURN ONE WAY<\/p>"
       }
     }
   },

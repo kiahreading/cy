@@ -7,7 +7,8 @@
       "settings": {
         "menu": "main-menu",
         "mobilemenu": "mobile-menu",
-        "mobilefootermenu": "footer"
+        "mobilefootermenu": "footer",
+        "multipletexts": "I’M PATIENT AS THE EARTH"
       }
     }
   },
