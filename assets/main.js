@@ -358,7 +358,7 @@ if (carousel) {
 // --------------------------------------------------
 
 const container = document.querySelector('.appearing-container');
-const hereIAmText = 'I\'m patient as the earth';
+const hereIAmText = document.querySelector('.appearing-text-content').textContent;
 let isCursorInside = true;
 
 // Function to create and animate the "here i am" div
