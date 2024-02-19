@@ -1027,12 +1027,22 @@ a.product__text {
   }
 }
 
+.product__description {
+  margin-bottom: 2rem;
+}
+
 .product__description--uppercase {
   text-transform: uppercase;
 }
 
 .product__description, .price--product, .product-form__submit, variant-radios{
   margin-top: 2rem;
+}
+
+variant-radios {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .product--no-media .product__title,
