@@ -4,9 +4,11 @@
 
 <div class="home-content">
   <div class="home-content__text animated-intro-item animated-intro-text">
-    I’M PATIENT AS THE EARTH<br>
-    I ONLY TURN ONE WAY
-    {% comment %} {{ section.settings.text }} {% endcomment %}
+    {% comment %}
+      I’M PATIENT AS THE EARTH<br>
+      I ONLY TURN ONE WAY
+    {% endcomment %}
+    {{ section.settings.text }}
   </div>
 </div>
 
@@ -21,7 +23,7 @@
   },
   "settings": [
     {
-      "type": "textarea",
+      "type": "richtext",
       "id": "text",
       "label": "Text"
     }

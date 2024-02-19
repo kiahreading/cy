@@ -286,8 +286,6 @@ if (carousel) {
 
   // } );
 
-
-
   // Trigger lazyloading after splide has cloned the slides
   // splide.on('ready', () => {
   //   setupLazyLoading(carousel.querySelector);
@@ -397,7 +395,7 @@ function handleCursorActivity() {
     if (!isCursorInside) {
       createHereIAmDiv();
     }
-  }, 5000);
+  }, 6000);
 }
 
 // Start listening for cursor activity
