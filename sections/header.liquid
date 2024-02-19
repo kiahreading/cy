@@ -5,6 +5,10 @@
 {% assign total_links = section.settings.menu.links.size %}
 {% assign half_links = total_links | divided_by: 2 %}
 
+<div style="display: none">
+  {{ section.settings.multipletexts }}
+</div>
+
 <header class="header">
   <div class="header__wrapper">
     <div class="faux-background"></div>
@@ -174,6 +178,11 @@
       "id": "mobilefootermenu",
       "default": "main-menu",
       "label": "Mobile footer menu"
+    },
+    {
+      "type": "text",
+      "id": "multipletexts",
+      "label": "Text that appears when user navigates away from page"
     }
   ]
 }
