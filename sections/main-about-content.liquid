@@ -17,18 +17,6 @@
           >
         </div>
       {%- endif -%}
-      {%- if section.settings.image_2 != blank -%}
-        <div class="">
-          <img
-            type=""
-            data-lazy
-            data-src="{{ section.settings.image_2.src | image_url: width: 400 }}"
-            width="{{ section.settings.image_2.image_width}}"
-            height="{{ section.settings.image_2.image_height}}"
-            alt="{{ section.settings.image_2.alt}}"
-          >
-        </div>
-      {%- endif -%}
     </div>
     <div class="about-content__text reveal">
       <p>
@@ -53,11 +41,6 @@
       "type": "image_picker",
       "id": "image",
       "label": "Image one"
-    },
-    {
-      "type": "image_picker",
-      "id": "image_2",
-      "label": "Image two"
     },
     {
       "type": "textarea",
