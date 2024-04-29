@@ -300,6 +300,18 @@ p a {
 .template-page-space {
   max-height: 100svh;
   position: relative;
+  color: var(--white);
+  .header__heading-logo path,
+  .header__heading-logo path.white-logo {
+    fill: var(--white);
+  }
+  .header__heading-logo path.black-logo {
+    fill: var(--black);
+  }
+  .mobile-menu-modal,
+  .mega-menu__content {
+    color: var(--black);
+  }
   .footer {
     position: absolute;
     bottom: 0;

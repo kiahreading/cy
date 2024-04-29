@@ -28,25 +28,14 @@
     </div>
   </div>
   <div
-    class="splide splide--banner banner"
-    aria-roledescription="{{ 'sections.slideshow.carousel' | t }}"
-    aria-label="{{ section.settings.accessibility_info | escape }}"
+    class="banner"
   >
-    <div class="splide__track">
-      <ul class="splide__list">
-        {%- for block in section.blocks -%}
-          <div
-            class="splide__slide"
-            role="group"
-            aria-roledescription="{{ 'sections.slideshow.slide' | t }}"
-            aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
-            tabindex="-1"
-          >
+    {%- if section.settings.image != blank -%}
             <div class="banner__image-wrapper">
-              {%- if block.settings.image -%}
+              {%- if section.settings.image -%}
                 <picture>
                   {%- liquid
-                    assign height = block.settings.image.width | divided_by: block.settings.image.aspect_ratio | round
+                    assign height = section.settings.image.width | divided_by: section.settings.image.aspect_ratio | round
                     assign sizes = '100vw'
                     assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
                     assign fetch_priority = 'auto'
@@ -54,13 +43,9 @@
                       assign fetch_priority = 'high'
                     endif
                   -%}
-                  {%- comment %}
-                    {%- if forloop.first %}
-                    {%- endif %}
-                  {%- endcomment %}
-                  {% assign desktop_image = block.settings.image %}
-                  {%- if block.settings.mobile_image -%}
-                    {% assign mobile_image = block.settings.mobile_image %}
+                  {% assign desktop_image = section.settings.image %}
+                  {%- if section.settings.mobile_image -%}
+                    {% assign mobile_image = section.settings.mobile_image %}
                     <source
                       media="(max-width: 599px)"
                       data-srcset="
@@ -113,7 +98,7 @@
                   >
                   {%- comment -%}
                     {{
-                      block.settings.image
+                      section.settings.image
                       | image_url: width: 3840
                       | image_tag: height: height, sizes: sizes, widths: widths, fetchpriority: fetch_priority
                     }}
@@ -121,11 +106,9 @@
                 </picture>
               {%- endif -%}
             </div>
-          </div>
-        {%- endfor -%}
-      </ul>
+          {%- endif -%}
     </div>
-  </div>
+    
 </section>
 
 {% schema %}
@@ -165,25 +148,16 @@
       "type": "url",
       "id": "space_button_url",
       "label": "Button link"
-    }
-  ],
-  "blocks": [
+    },
     {
-      "type": "slide",
-      "name": "t:sections.slideshow.blocks.slide.name",
-      "limit": 10,
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Desktop image"
-        },
-        {
-          "type": "image_picker",
-          "id": "mobile_image",
-          "label": "Mobile image"
-        }
-      ]
+      "type": "image_picker",
+      "id": "image",
+      "label": "Desktop image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile image"
     }
   ]
 }

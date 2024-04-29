@@ -1,8 +1,7 @@
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 import Splide from '@splidejs/splide';
-import LazyLoad from "vanilla-lazyload";
-
+import LazyLoad from 'vanilla-lazyload';
 
 // --------------------------------------------------
 // 🐌 General
@@ -12,8 +11,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 gsap.defaults({
   ease: 'power1.inOut',
-  duration: .5
-})
+  duration: 0.5,
+});
 
 // --------------------------------------------------
 // 💤 Lazy Loading
@@ -21,13 +20,12 @@ gsap.defaults({
 
 const lazyLoadInstance = new LazyLoad({
   // Your custom settings go here
-  elements_selector: "[data-lazy]",
+  elements_selector: '[data-lazy]',
   callback_loaded: (el) => {
     el.style.opacity = '1';
-    el.style.visibility = 'initial'
-  }
+    el.style.visibility = 'initial';
+  },
 });
-
 
 // --------------------------------------------------
 // Homepage animation
@@ -38,36 +36,59 @@ const hasVisitedAnyPage = sessionStorage.getItem('hasVisitedAnyPage');
 
 // If it's the first visit, run the animation
 if (!hasVisitedAnyPage) {
-
   let homePage = document.querySelector('.template-index');
   if (homePage) {
-    const animatedIntroItems = gsap.utils.toArray('.animated-intro-item'); 
-    gsap.set(animatedIntroItems, { autoAlpha: 0});
+    const animatedIntroItems = gsap.utils.toArray('.animated-intro-item');
+    gsap.set(animatedIntroItems, { autoAlpha: 0 });
     // Your GSAP timeline animation code goes here
     const tl = gsap.timeline();
-  
+
     // Target the middle div and scale it
-    tl.to('.animated-intro-text', {ease: "power1.inOut", duration: .6, autoAlpha: 1 });
-    tl.to('.animated-intro-text', {ease: "power1.inOut", duration: .6, autoAlpha: 0 }, '+=1.2');
-  
+    tl.to('.animated-intro-text', { ease: 'power1.inOut', duration: 0.6, autoAlpha: 1 });
+    tl.to('.animated-intro-text', { ease: 'power1.inOut', duration: 0.6, autoAlpha: 0 }, '+=1.2');
+
     // Target the middle div and scale it
-    tl.to('.header__heading.animated-header-item', {ease: "power1.inOut", delay: 0.1, duration: .5, autoAlpha: 1 }, '-=0.3');
-  
+    tl.to(
+      '.header__heading.animated-header-item',
+      { ease: 'power1.inOut', delay: 0.1, duration: 0.5, autoAlpha: 1 },
+      '-=0.3'
+    );
+
     // Add a delay before targeting the divs before and after the middle div
-    tl.to(gsap.utils.toArray('.header .animated-header-item')[1], {ease: "power1.inOut", duration: .5, autoAlpha: 1 }, '-=0.1');
-    tl.to(gsap.utils.toArray('.header .animated-header-item')[3], {ease: "power1.inOut", duration: .5, autoAlpha: 1 }, '-=0.6');
-  
+    tl.to(
+      gsap.utils.toArray('.header .animated-header-item')[1],
+      { ease: 'power1.inOut', duration: 0.5, autoAlpha: 1 },
+      '-=0.1'
+    );
+    tl.to(
+      gsap.utils.toArray('.header .animated-header-item')[3],
+      { ease: 'power1.inOut', duration: 0.5, autoAlpha: 1 },
+      '-=0.6'
+    );
+
     // Add a delay before targeting the divs before and after the previously targeted divs
-    tl.to(gsap.utils.toArray('.header .animated-header-item')[0], {ease: "power1.inOut", duration: .5, autoAlpha: 1 }, '-=0.1');
-    tl.to(gsap.utils.toArray('.header .animated-header-item')[4], {ease: "power1.inOut", duration: .5, autoAlpha: 1 }, '-=0.6');
-  
+    tl.to(
+      gsap.utils.toArray('.header .animated-header-item')[0],
+      { ease: 'power1.inOut', duration: 0.5, autoAlpha: 1 },
+      '-=0.1'
+    );
+    tl.to(
+      gsap.utils.toArray('.header .animated-header-item')[4],
+      { ease: 'power1.inOut', duration: 0.5, autoAlpha: 1 },
+      '-=0.6'
+    );
+
     // Add a delay before targeting the divs before and after the previously targeted divs
-    tl.to(gsap.utils.toArray('.animated-intro-item.animated-intro-item--other'), {ease: "power1.inOut", duration: .5, autoAlpha: 1 }, '+=0.4');
+    tl.to(
+      gsap.utils.toArray('.animated-intro-item.animated-intro-item--other'),
+      { ease: 'power1.inOut', duration: 0.5, autoAlpha: 1 },
+      '+=0.4'
+    );
   }
 
   // Mark the website as visited in the session
   sessionStorage.setItem('hasVisitedAnyPage', 'true');
-};
+}
 
 // --------------------------------------------------
 // 🎠 Carousels
@@ -89,7 +110,7 @@ if (bannerCarousel) {
     perMove: 1,
     focus: 'center',
     width: '100%',
-    updateOnMove: true
+    updateOnMove: true,
   });
 
   bannerSplide.mount();
@@ -104,109 +125,174 @@ let mm = gsap.matchMedia();
 gsap.set(texts, { autoAlpha: 0 });
 
 texts.forEach((text, i) => {
-
   const anim = gsap.to(text, {
     autoAlpha: 1,
-    duration: .6,
+    duration: 0.6,
     stagger: 0.0,
-    ease: "power1.inOut",
+    ease: 'power1.inOut',
     paused: true,
-    delay: .3
+    delay: 0.3,
   });
 
-  mm.add("(min-width: 800px)", () => {
+  mm.add('(min-width: 800px)', () => {
     // Use callbacks to control the state of the animation
     ScrollTrigger.create({
       trigger: text,
-      start: "top 90%",
+      start: 'top 90%',
       once: false,
-      onEnter: self => {
+      onEnter: (self) => {
         // If it's scrolled past, set the state
         // If it's scrolled to, play it
-        anim.play()
-      }
+        anim.play();
+      },
     });
   });
 
-  mm.add("(max-width: 799px)", () => {
+  mm.add('(max-width: 799px)', () => {
     // Use callbacks to control the state of the animation
     ScrollTrigger.create({
       trigger: text,
-      start: "top 95%",
+      start: 'top 95%',
       once: false,
-      onEnter: self => {
+      onEnter: (self) => {
         // If it's scrolled past, set the state
         // If it's scrolled to, play it
-        anim.play()
-      }
+        anim.play();
+      },
     });
   });
 
   ScrollTrigger.create({
     trigger: text,
-    start: "top bottom",
-    onLeaveBack: () => anim.pause(0)
+    start: 'top bottom',
+    onLeaveBack: () => anim.pause(0),
   });
-
 });
 
 // --------------------------------------------------
 // Mega menu
 // --------------------------------------------------
 
-document.addEventListener("DOMContentLoaded", function () {
+let spacePage = document.querySelector('.template-page-space');
+let spacePageLogos = document.querySelectorAll('.header__heading-logo path');
+let spacePageMenuItems = document.querySelector('.header__wrapper');
+
+document.addEventListener('DOMContentLoaded', function () {
   const header = document.querySelector('.header');
   const fauxBackground = document.querySelector('.faux-background');
   const megaMenuTriggers = document.querySelectorAll('.mega-menu');
   const megaMenus = document.querySelectorAll('.mega-menu__content');
 
-  megaMenuTriggers.forEach(trigger => {
-      const targetId = trigger.getAttribute('data-id');
-      const megaMenu = document.querySelector(`.mega-menu__content[data-id="${targetId}"]`);
+  megaMenuTriggers.forEach((trigger) => {
+    const targetId = trigger.getAttribute('data-id');
+    const megaMenu = document.querySelector(`.mega-menu__content[data-id="${targetId}"]`);
 
-      let isMouseOverTrigger = false;
-      let isMouseOverMenu = false;
+    let isMouseOverTrigger = false;
+    let isMouseOverMenu = false;
 
-      trigger.addEventListener('mouseenter', () => {
-          isMouseOverTrigger = true;
-          showMegaMenu();
-      });
+    trigger.addEventListener('mouseenter', () => {
+      isMouseOverTrigger = true;
+      showMegaMenu();
+    });
 
-      trigger.addEventListener('mouseleave', () => {
-          isMouseOverTrigger = false;
-          hideMegaMenu();
-      });
+    trigger.addEventListener('mouseleave', () => {
+      isMouseOverTrigger = false;
+      hideMegaMenu();
+    });
 
-      megaMenu.addEventListener('mouseenter', () => {
-          isMouseOverMenu = true;
-          showMegaMenu();
-      });
+    megaMenu.addEventListener('mouseenter', () => {
+      isMouseOverMenu = true;
+      showMegaMenu();
+    });
 
-      megaMenu.addEventListener('mouseleave', () => {
-          isMouseOverMenu = false;
-          hideMegaMenu();
-      });
+    megaMenu.addEventListener('mouseleave', () => {
+      isMouseOverMenu = false;
+      hideMegaMenu();
+    });
 
-      function showMegaMenu() {
-          if (isMouseOverTrigger || isMouseOverMenu) {
-              const tl = gsap.timeline();
-              // tl.to(header, {ease: "power1.inOut", duration: 0.3, backgroundColor: '#fff' });
-               tl.to(fauxBackground, {ease: "power1.inOut", duration: 0.3, opacity: 1 });
-              tl.to(megaMenu, {ease: "power1.inOut", opacity: 1, display: 'block', duration: 0.3}, '-=.3');
-
-              // gsap.to(header, { duration: 0.3, backgroundColor: '#fff' });
-              // gsap.to(megaMenu, { opacity: 1, display: 'block', duration: 0.3, backgroundColor: '#fff' });
-              // gsap.from(megaMenu.children, { opacity: 0, stagger: 0.1, duration: 0.5 });
-          }
+    function showMegaMenu() {
+      if (isMouseOverTrigger || isMouseOverMenu) {
+        const tl = gsap.timeline();
+        // tl.to(header, {ease: "power1.inOut", duration: 0.3, backgroundColor: '#fff' });
+        tl.to(fauxBackground, { ease: 'power1.inOut', duration: 0.3, opacity: 1 });
+        tl.to(megaMenu, { ease: 'power1.inOut', opacity: 1, display: 'block', duration: 0.3 }, '-=.3');
+        if (spacePage) {
+          // Loop through each path and set its fill attribute to var(--color-1)
+          spacePageLogos.forEach((path) => {
+            path.classList.add('black-logo');
+          });
+          spacePageMenuItems.style.color = 'var(--black)';
+        }
+        // gsap.to(header, { duration: 0.3, backgroundColor: '#fff' });
+        // gsap.to(megaMenu, { opacity: 1, display: 'block', duration: 0.3, backgroundColor: '#fff' });
+        // gsap.from(megaMenu.children, { opacity: 0, stagger: 0.1, duration: 0.5 });
       }
+    }
 
-      function hideMegaMenu() {
-          if (!isMouseOverTrigger && !isMouseOverMenu) {
-            const tl = gsap.timeline();
-              tl.to(fauxBackground, {ease: "power1.inOut", duration: 0.3, opacity: 0 });
-              tl.to(megaMenu, { opacity: 0, display: 'none', duration: 0.3}, '-=.3');
-          }
+    function hideMegaMenu() {
+      if (!isMouseOverTrigger && !isMouseOverMenu) {
+        const tl = gsap.timeline();
+        tl.to(fauxBackground, { ease: 'power1.inOut', duration: 0.3, opacity: 0 });
+        tl.to(megaMenu, { opacity: 0, display: 'none', duration: 0.3 }, '-=.3');
+        if (spacePage) {
+          spacePageLogos.forEach((path) => {
+            path.classList.remove('black-logo');
+          });
+          spacePageMenuItems.style.color = 'var(--white)';
+        }
       }
+    }
+  });
+});
+
+// --------------------------------------------------
+// Mobile menu
+// --------------------------------------------------
+
+document.addEventListener('DOMContentLoaded', function () {
+  const mobileMenuBtn = document.querySelector('.mobile-header-menu__menu-button');
+  const modal = document.querySelector('.mobile-menu-modal');
+  const modalText = modal.querySelector('.mobile-menu-modal__text');
+
+  let isModalOpen = false;
+
+  mobileMenuBtn.addEventListener('click', () => {
+    if (isModalOpen) {
+      // Close modal
+      gsap.to(modalText, {
+        opacity: 0,
+        duration: 0.5,
+        onComplete: function () {
+          modal.style.display = 'none';
+        },
+      });
+      // Allow scrolling on the body
+      document.body.style.overflow = 'auto';
+
+      if (spacePage) {
+        spacePageLogos.forEach((path) => {
+          path.classList.remove('black-logo');
+        });
+        spacePageMenuItems.style.color = 'var(--white)';
+      }
+    } else {
+      // Open modal
+      modal.style.display = 'flex';
+      gsap.to(modalText, { opacity: 1, duration: 0.5 });
+      // Prevent scrolling on the body
+      document.body.style.overflow = 'hidden';
+
+      if (spacePage) {
+        // Loop through each path and set its fill attribute to var(--color-1)
+        spacePageLogos.forEach((path) => {
+          path.classList.add('black-logo');
+        });
+        spacePageMenuItems.style.color = 'var(--black)';
+      }
+    }
+
+    // Toggle modal state
+    isModalOpen = !isModalOpen;
   });
 });
 
@@ -259,28 +345,26 @@ document.addEventListener("DOMContentLoaded", function () {
 // Product carousel
 // --------------------------------------------------
 
-
 let carousel = document.querySelector('.carousel');
 
 // If it's the first visit, run the animation
 if (carousel) {
-
   let splide = new Splide(carousel, {
     type: 'fade',
     rewind: true,
     speed: 0,
     flickPower: 300,
     arrows: false,
-    pagination: false
+    pagination: false,
   });
 
   carousel.addEventListener('pause', () => {
     splide.Components.Autoplay.pause();
-  })
+  });
 
   carousel.addEventListener('resume', () => {
     splide.Components.Autoplay.play();
-  })
+  });
 
   // splide.on( 'click', function (event) {
 
@@ -294,63 +378,60 @@ if (carousel) {
   splide.mount();
 
   // Auto height
-  if(carousel.classList.contains('carousel--auto-height')) {
+  if (carousel.classList.contains('carousel--auto-height')) {
     const autoHeight = () => {
       let activeSlide = splide.Components.Elements.slides[splide.index];
       gsap.set(carousel.querySelector('.splide__list'), {
-        height: activeSlide.offsetHeight
-      })
-    }
+        height: activeSlide.offsetHeight,
+      });
+    };
     autoHeight();
     splide.on('move', (e) => {
       autoHeight();
       let cs = document.querySelector('.carousel-counter__status');
       // cs.innerHTML = splide.index + 1;
-    })
+    });
   }
 
   // Click to change slide
-  if(carousel.classList.contains('carousel--click-to-next')) {
+  if (carousel.classList.contains('carousel--click-to-next')) {
     let nextButtons = document.querySelectorAll('.carousel');
-    if(nextButtons) {
+    if (nextButtons) {
       nextButtons.forEach((item) => {
         // Get the width of the div
         const divWidth = item.clientWidth;
-        item.addEventListener( 'click', function(event) {
-          
+        item.addEventListener('click', function (event) {
           // Get the horizontal position of the click event
           var clickX = event.clientX - item.getBoundingClientRect().left;
-          
+
           // Calculate the distance from the left and right edges
           var distanceToLeft = clickX;
           var distanceToRight = divWidth - clickX;
-          
+
           if (distanceToLeft < distanceToRight) {
             splide.go('<');
           } else {
             splide.go('>');
           }
-        })
-        item.addEventListener('mousemove', function(event) {
-          
+        });
+        item.addEventListener('mousemove', function (event) {
           // Get the horizontal position of the cursor within the div
           var cursorX = event.clientX - this.getBoundingClientRect().left;
-          
+
           // Calculate the distance from the cursor to the left and right edges
           var distanceToLeft = cursorX;
           var distanceToRight = divWidth - cursorX;
-          
+
           if (distanceToLeft < distanceToRight) {
-              console.log('Cursor is closer to the left side of the div');
-              item.setAttribute('data-mouse', 'left');
+            console.log('Cursor is closer to the left side of the div');
+            item.setAttribute('data-mouse', 'left');
           } else {
-              console.log('Cursor is closer to the right side of the div');
-              item.setAttribute('data-mouse', 'right');
+            console.log('Cursor is closer to the right side of the div');
+            item.setAttribute('data-mouse', 'right');
           }
         });
       });
-    };
-
+    }
   }
 }
 // --------------------------------------------------
@@ -380,11 +461,15 @@ function createHereIAmDiv() {
 function handleCursorActivity() {
   document.addEventListener('mouseenter', () => {
     isCursorInside = true;
-    gsap.to('.here-i-am', { duration: 1, opacity: 0, onComplete: () => {
-      document.querySelectorAll('.here-i-am').forEach((div) => {
-        container.removeChild(div);
-      });
-    } });
+    gsap.to('.here-i-am', {
+      duration: 1,
+      opacity: 0,
+      onComplete: () => {
+        document.querySelectorAll('.here-i-am').forEach((div) => {
+          container.removeChild(div);
+        });
+      },
+    });
   });
 
   document.addEventListener('mouseleave', () => {
@@ -400,36 +485,3 @@ function handleCursorActivity() {
 
 // Start listening for cursor activity
 handleCursorActivity();
-
-// --------------------------------------------------
-// Mobile menu
-// --------------------------------------------------
-
-document.addEventListener('DOMContentLoaded', function () {
-  const mobileMenuBtn = document.querySelector('.mobile-header-menu__menu-button');
-  const modal = document.querySelector('.mobile-menu-modal');
-  const modalText = modal.querySelector('.mobile-menu-modal__text');
-
-  let isModalOpen = false;
-
-  mobileMenuBtn.addEventListener('click', () => {
-      if (isModalOpen) {
-        // Close modal
-        gsap.to(modalText, { opacity: 0, duration: 0.5, onComplete: function () {
-          modal.style.display = 'none';
-        }});
-        // Allow scrolling on the body
-        document.body.style.overflow = 'auto';
-      } else {
-        // Open modal
-        modal.style.display = 'flex';
-        gsap.to(modalText, { opacity: 1, duration: 0.5 });
-        // Prevent scrolling on the body
-        document.body.style.overflow = 'hidden';
-      }
-  
-      // Toggle modal state
-      isModalOpen = !isModalOpen;
-    });
-
-});
