@@ -2,38 +2,13 @@
   "sections": {
     "main": {
       "type": "main-space-content",
-      "blocks": {
-        "cf10f528-6024-4445-a78f-c60681bf843f": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/G6A6672_web.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/laura-cleffmann-z3drmcczVTc-unsplash.jpg"
-          }
-        },
-        "3648c491-ee4e-4c89-9ee1-f65c466c131e": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/theodore-black-Ltgg9uGi7tE-unsplash.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/julian-mora-v490AlsqbTs-unsplash.jpg"
-          }
-        },
-        "4ed87b83-bf2b-4eea-951b-916c7207fefc": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/liam-mcgarry-7ZuTyZfKtQo-unsplash.jpg"
-          }
-        }
-      },
-      "block_order": [
-        "cf10f528-6024-4445-a78f-c60681bf843f",
-        "3648c491-ee4e-4c89-9ee1-f65c466c131e",
-        "4ed87b83-bf2b-4eea-951b-916c7207fefc"
-      ],
       "settings": {
         "space_title": "Event space rental",
         "space_text": "At just over 1300 square feet, CY is a modern space with polished concrete floors, white walls and a unique garage-style door that opens to the outside. The multi-functional space includes in-house amenities such as a fully equipped kitchen and washroom, and can be utilized upon request for private events.",
         "space_button_text": "Contact us",
-        "space_button_url": "shopify:\/\/pages\/contact"
+        "space_button_url": "shopify:\/\/pages\/contact",
+        "image": "shopify:\/\/shop_images\/G6A6672_web.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/laura-cleffmann-z3drmcczVTc-unsplash.jpg"
       }
     }
   },
