@@ -5,7 +5,8 @@
       "settings": {
         "address_text": "7296 NW 1st Ct, Miami FL 33150",
         "address_url": "https:\/\/goo.gl\/maps\/VaHvbALAgc6hMU3NA",
-        "contact_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        "contact_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "image": "shopify:\/\/shop_images\/CY-ESPINA.png"
       }
     }
   },
