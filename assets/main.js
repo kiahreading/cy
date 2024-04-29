@@ -438,15 +438,68 @@ if (carousel) {
 // Appearing content
 // --------------------------------------------------
 
+// const container = document.querySelector('.appearing-container');
+// const hereIAmText = document.querySelector('.appearing-text-content').textContent;
+// let isCursorInside = true;
+
+// // Function to create and animate the "here i am" div
+// function createHereIAmDiv() {
+//   const div = document.createElement('div');
+//   div.classList.add('here-i-am');
+//   div.textContent = hereIAmText;
+//   container.appendChild(div);
+
+//   const randomX = Math.random() * (window.innerWidth - 200);
+//   const randomY = Math.random() * (window.innerHeight - 50);
+
+//   gsap.set(div, { x: randomX, y: randomY });
+
+//   gsap.to(div, { duration: 1, opacity: 1 });
+// }
+
+// // Function to handle cursor enter and leave events
+// function handleCursorActivity() {
+//   document.addEventListener('mouseenter', () => {
+//     isCursorInside = true;
+//     gsap.to('.here-i-am', {
+//       duration: 1,
+//       opacity: 0,
+//       onComplete: () => {
+//         document.querySelectorAll('.here-i-am').forEach((div) => {
+//           container.removeChild(div);
+//         });
+//       },
+//     });
+//   });
+
+//   document.addEventListener('mouseleave', () => {
+//     isCursorInside = false;
+//   });
+
+//   setInterval(() => {
+//     if (!isCursorInside) {
+//       createHereIAmDiv();
+//     }
+//   }, 6000);
+// }
+
+// // Start listening for cursor activity
+// handleCursorActivity();
+
 const container = document.querySelector('.appearing-container');
-const hereIAmText = document.querySelector('.appearing-text-content').textContent;
+const hereIAmTexts = [
+  'Beauty vibrates over things,<br>rests softly over aging metals.',
+  'Mornings of coladitos y<br>mi amor cómo es que tú estás?',
+  'The air is a slap of steam in your face,<br>storm clouds spread like wildfire as you drive.',
+];
 let isCursorInside = true;
 
 // Function to create and animate the "here i am" div
 function createHereIAmDiv() {
   const div = document.createElement('div');
   div.classList.add('here-i-am');
-  div.textContent = hereIAmText;
+  const randomIndex = Math.floor(Math.random() * hereIAmTexts.length);
+  div.innerHTML = hereIAmTexts[randomIndex];
   container.appendChild(div);
 
   const randomX = Math.random() * (window.innerWidth - 200);
