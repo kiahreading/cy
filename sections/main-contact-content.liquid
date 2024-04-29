@@ -53,6 +53,55 @@
 
     <p></p>
   </div>
+
+
+  {%- if section.settings.image != blank -%}
+    <div class="contact-image">
+      {%- if section.settings.image -%}
+        <picture>
+          {%- liquid
+            assign height = section.settings.image.width | divided_by: section.settings.image.aspect_ratio | round
+            assign sizes = '100vw'
+            assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+            assign fetch_priority = 'auto'
+            if section.index == 1
+              assign fetch_priority = 'high'
+            endif
+          -%}
+          {% assign desktop_image = section.settings.image %}
+            <source
+              data-srcset="
+                {% if desktop_image.width > 640 %}{{ desktop_image.src | image_url: width: 640 }} 640w{% endif %}
+                {% if desktop_image.width > 720 %},{{ desktop_image.src | image_url: width: 720 }} 720w{% endif %}
+                {% if desktop_image.width > 900 %},{{ desktop_image.src | image_url: width: 900 }} 900w{% endif %}
+                {% if desktop_image.width > 1200 %},{{ desktop_image.src | image_url: width: 1200 }} 1200w{% endif %}
+                {% if desktop_image.width > 1600 %},{{ desktop_image.src | image_url: width: 1600 }} 1600w{% endif %}
+                {% if desktop_image.width > 2000 %},{{ desktop_image.src | image_url: width: 2000 }} 2000w{% endif %}
+                {% if desktop_image.width > 2400 %},{{ desktop_image.src | image_url: width: 2400 }} 2400w{% endif %}
+              "
+            >
+          <img
+            type=""
+            data-lazy
+            data-src="{{ desktop_image.src | image_url: width: 3840 }}"
+            data-srcset="
+              {% if desktop_image.width > 640 %}{{ desktop_image.src | image_url: width: 640 }} 640w{% endif %}
+              {% if desktop_image.width > 720 %},{{ desktop_image.src | image_url: width: 720 }} 720w{% endif %}
+              {% if desktop_image.width > 900 %},{{ desktop_image.src | image_url: width: 900 }} 900w{% endif %}
+              {% if desktop_image.width > 1200 %},{{ desktop_image.src | image_url: width: 1200 }} 1200w{% endif %}
+              {% if desktop_image.width > 1600 %},{{ desktop_image.src | image_url: width: 1600 }} 1600w{% endif %}
+              {% if desktop_image.width > 2000 %},{{ desktop_image.src | image_url: width: 2000 }} 2000w{% endif %}
+              {% if desktop_image.width > 2400 %},{{ desktop_image.src | image_url: width: 2400 }} 2400w{% endif %}
+            "
+            data-sizes="100vw"
+            alt="{{ desktop_image.alt}}"
+          >
+        </picture>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
+
 </div>
 
 {% schema %}
@@ -80,6 +129,11 @@
       "type": "textarea",
       "id": "contact_text",
       "label": "Contact text"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Desktop image"
     }
   ]
 }
