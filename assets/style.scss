@@ -2229,6 +2229,19 @@ input[type=number] {
 .contact-image {
   position: absolute;
   z-index: -1;
+  right: 15%;
+  top: 0;
+  @include for-small-tablet-below {
+    right: -10%;
+    top: 10%;
+    }
+  img {
+   height: 30vw;
+   width: auto;
+   @include for-small-tablet-below {
+    height: 65vw;
+    }
+  }
 }
 
 /* policy
