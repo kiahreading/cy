@@ -489,7 +489,7 @@ if (carousel) {
 const container = document.querySelector('.appearing-container');
 const hereIAmTexts = [
   'Beauty vibrates over things,<br>rests softly over aging metals.',
-  'Mornings of coladitos y<br>mi amor cómo es que tú estás?',
+  'Mornings of <i>coladitos</i> y<br><i>mi amor cómo es que tú estás</i>?',
   'The air is a slap of steam in your face,<br>storm clouds spread like wildfire as you drive.',
 ];
 let isCursorInside = true;
