@@ -495,11 +495,11 @@ if (contactTemplate) {
       animateImageOnce(); // Animate the image once when the cursor leaves
     });
 
-    setInterval(() => {
-      if (!isCursorInside) {
-        createHereIAmDiv();
-      }
-    }, 6000);
+    // setInterval(() => {
+    //   if (!isCursorInside) {
+    //     createHereIAmDiv();
+    //   }
+    // }, 6000);
   }
 
   // Start listening for cursor activity

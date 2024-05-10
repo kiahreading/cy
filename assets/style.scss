@@ -2235,13 +2235,16 @@ input[type=number] {
     right: -10%;
     top: 10%;
     }
+}
+
+.contact-image__picture {
   img {
-   height: 30vw;
-   width: auto;
-   @include for-small-tablet-below {
-    height: 65vw;
-    }
-  }
+    height: 30vw;
+    width: auto;
+    @include for-small-tablet-below {
+     height: 65vw;
+     }
+   }
 }
 
 /* policy
