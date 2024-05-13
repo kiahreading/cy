@@ -1153,14 +1153,9 @@ variant-radios {
     // width: calc(100% + 4rem);
   }
 
-  .product__media-wrapper slider-component:not(.thumbnail-slider--no-slide) {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
-  }
-
   .product__media-list .product__media-item {
-    width: calc(100% - 3rem - var(--grid-mobile-horizontal-spacing));
     margin-bottom: 0rem;
+    width: 100%;
   }
 
   .product--mobile-columns .product__media-item {
