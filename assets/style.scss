@@ -1433,6 +1433,11 @@ variant-radios {
   content: '#';
 }
 
+.dots__container {
+  display: flex;
+  justify-content: center;
+}
+
 /* SKU block */
 
 .product__sku.visibility-hidden::after {
