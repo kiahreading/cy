@@ -1164,6 +1164,10 @@ variant-radios {
 }
 
 @media screen and (min-width: 750px) {
+
+  .product__media-list.splide__list {
+    display: initial;
+  }
   .product--thumbnail .product__media-list,
   .product--thumbnail_slider .product__media-list {
     padding-bottom: calc(var(--media-shadow-vertical-offset) * var(--media-shadow-visible));
