@@ -360,13 +360,13 @@ if (carousel) {
 
   splide.remove('.product__media-item.product__media-item--variant');
 
-  carousel.addEventListener('pause', () => {
-    splide.Components.Autoplay.pause();
-  });
+  // carousel.addEventListener('pause', () => {
+  //   splide.Components.Autoplay.pause();
+  // });
 
-  carousel.addEventListener('resume', () => {
-    splide.Components.Autoplay.play();
-  });
+  // carousel.addEventListener('resume', () => {
+  //   splide.Components.Autoplay.play();
+  // });
 
   // splide.on( 'click', function (event) {
 
@@ -380,61 +380,61 @@ if (carousel) {
   splide.mount();
 
   // Auto height
-  if (carousel.classList.contains('carousel--auto-height')) {
-    const autoHeight = () => {
-      let activeSlide = splide.Components.Elements.slides[splide.index];
-      gsap.set(carousel.querySelector('.splide__list'), {
-        height: activeSlide.offsetHeight,
-      });
-    };
-    autoHeight();
-    splide.on('move', (e) => {
-      autoHeight();
-      let cs = document.querySelector('.carousel-counter__status');
-      // cs.innerHTML = splide.index + 1;
-    });
-  }
+  // if (carousel.classList.contains('carousel--auto-height')) {
+  //   const autoHeight = () => {
+  //     let activeSlide = splide.Components.Elements.slides[splide.index];
+  //     gsap.set(carousel.querySelector('.splide__list'), {
+  //       height: activeSlide.offsetHeight,
+  //     });
+  //   };
+  //   autoHeight();
+  //   splide.on('move', (e) => {
+  //     autoHeight();
+  //     let cs = document.querySelector('.carousel-counter__status');
+  //     // cs.innerHTML = splide.index + 1;
+  //   });
+  // }
 
   // Click to change slide
-  if (carousel.classList.contains('carousel--click-to-next')) {
-    let nextButtons = document.querySelectorAll('.carousel');
-    if (nextButtons) {
-      nextButtons.forEach((item) => {
-        // Get the width of the div
-        const divWidth = item.clientWidth;
-        item.addEventListener('click', function (event) {
-          // Get the horizontal position of the click event
-          var clickX = event.clientX - item.getBoundingClientRect().left;
+  // if (carousel.classList.contains('carousel--click-to-next')) {
+  //   let nextButtons = document.querySelectorAll('.carousel');
+  //   if (nextButtons) {
+  //     nextButtons.forEach((item) => {
+  //       // Get the width of the div
+  //       const divWidth = item.clientWidth;
+  //       item.addEventListener('click', function (event) {
+  //         // Get the horizontal position of the click event
+  //         var clickX = event.clientX - item.getBoundingClientRect().left;
 
-          // Calculate the distance from the left and right edges
-          var distanceToLeft = clickX;
-          var distanceToRight = divWidth - clickX;
+  //         // Calculate the distance from the left and right edges
+  //         var distanceToLeft = clickX;
+  //         var distanceToRight = divWidth - clickX;
 
-          if (distanceToLeft < distanceToRight) {
-            splide.go('<');
-          } else {
-            splide.go('>');
-          }
-        });
-        item.addEventListener('mousemove', function (event) {
-          // Get the horizontal position of the cursor within the div
-          var cursorX = event.clientX - this.getBoundingClientRect().left;
+  //         if (distanceToLeft < distanceToRight) {
+  //           splide.go('<');
+  //         } else {
+  //           splide.go('>');
+  //         }
+  //       });
+  //       item.addEventListener('mousemove', function (event) {
+  //         // Get the horizontal position of the cursor within the div
+  //         var cursorX = event.clientX - this.getBoundingClientRect().left;
 
-          // Calculate the distance from the cursor to the left and right edges
-          var distanceToLeft = cursorX;
-          var distanceToRight = divWidth - cursorX;
+  //         // Calculate the distance from the cursor to the left and right edges
+  //         var distanceToLeft = cursorX;
+  //         var distanceToRight = divWidth - cursorX;
 
-          if (distanceToLeft < distanceToRight) {
-            console.log('Cursor is closer to the left side of the div');
-            item.setAttribute('data-mouse', 'left');
-          } else {
-            console.log('Cursor is closer to the right side of the div');
-            item.setAttribute('data-mouse', 'right');
-          }
-        });
-      });
-    }
-  }
+  //         if (distanceToLeft < distanceToRight) {
+  //           console.log('Cursor is closer to the left side of the div');
+  //           item.setAttribute('data-mouse', 'left');
+  //         } else {
+  //           console.log('Cursor is closer to the right side of the div');
+  //           item.setAttribute('data-mouse', 'right');
+  //         }
+  //       });
+  //     });
+  //   }
+  // }
 }
 // --------------------------------------------------
 // Appearing content
