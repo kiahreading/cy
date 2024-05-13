@@ -114,27 +114,39 @@
         // Select all li elements inside productList that don't have the specified class
         var nonVariantItems = productList.querySelectorAll('li:not(.product__media-item.product__media-item--variant)');
 
-        // Count the number of non-variant items
-        var count = nonVariantItems.length;
+        // Check if there are more than one non-variant items
+        if (nonVariantItems.length > 1) {
+          // Remove any existing dots container
+          var dotsContainer = document.querySelector('.dots__container');
+          if (dotsContainer) {
+            dotsContainer.parentNode.removeChild(dotsContainer);
+          }
 
-        // Iterate through each non-variant item and remove any existing dots
-        nonVariantItems.forEach(function(item) {
-          var existingDots = item.closest('.grid__item.product__media-wrapper').querySelectorAll('.dots');
-          existingDots.forEach(function(dot) {
-            dot.parentNode.removeChild(dot);
+          // Create a new dots container
+          dotsContainer = document.createElement('div');
+          dotsContainer.className = 'dots__container';
+
+          // Iterate through each non-variant item
+          nonVariantItems.forEach(function(item) {
+            // Create a new div element for the dot
+            var dot = document.createElement('div');
+            dot.className = 'dots';
+            dot.textContent = '.';
+
+            // Append the dot to the dots container
+            dotsContainer.appendChild(dot);
           });
-        });
 
-        // Iterate through each non-variant item
-        nonVariantItems.forEach(function(item) {
-          // Create a new div element for the dot
-          var dot = document.createElement('div');
-          dot.className = 'dots';
-          dot.textContent = '.';
-
-          // Append the dot to the parent div.grid__item.product__media-wrapper
-          item.closest('.grid__item.product__media-wrapper').appendChild(dot);
-        });
+          // Append the dots container to the appropriate parent element
+          var parentElement = nonVariantItems[0].closest('.grid__item.product__media-wrapper');
+          parentElement.appendChild(dotsContainer);
+        } else {
+          // If there's only one or zero non-variant items, remove any existing dots container
+          var existingDotsContainer = document.querySelector('.dots__container');
+          if (existingDotsContainer) {
+            existingDotsContainer.parentNode.removeChild(existingDotsContainer);
+          }
+        }
       }
 
       // Update dots on page load
