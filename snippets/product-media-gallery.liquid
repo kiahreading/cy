@@ -102,3 +102,49 @@
   </slider-component>
 </div>
 </media-gallery>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Check window width before executing the script
+    if (window.innerWidth <= 749) {
+      function updateDots() {
+        // Select the ul element with class product__media-list
+        var productList = document.querySelector('.product__media-list');
+
+        // Select all li elements inside productList that don't have the specified class
+        var nonVariantItems = productList.querySelectorAll('li:not(.product__media-item.product__media-item--variant)');
+
+        // Count the number of non-variant items
+        var count = nonVariantItems.length;
+
+        // Iterate through each non-variant item and remove any existing dots
+        nonVariantItems.forEach(function(item) {
+          var existingDots = item.closest('.grid__item.product__media-wrapper').querySelectorAll('.dots');
+          existingDots.forEach(function(dot) {
+            dot.parentNode.removeChild(dot);
+          });
+        });
+
+        // Iterate through each non-variant item
+        nonVariantItems.forEach(function(item) {
+          // Create a new div element for the dot
+          var dot = document.createElement('div');
+          dot.className = 'dots';
+          dot.textContent = '.';
+
+          // Append the dot to the parent div.grid__item.product__media-wrapper
+          item.closest('.grid__item.product__media-wrapper').appendChild(dot);
+        });
+      }
+
+      // Update dots on page load
+      updateDots();
+
+      // Select variant input elements and attach event listener to update dots
+      var variantInputs = document.querySelectorAll('.variant-radios input[type="radio"]');
+      variantInputs.forEach(function(input) {
+        input.addEventListener('input', updateDots);
+      });
+    }
+  });
+</script>
