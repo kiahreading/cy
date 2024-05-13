@@ -4,10 +4,10 @@
 
 import { fileURLToPath } from 'url';
 import path from 'path';
-import esbuild from "esbuild";
-import { sassPlugin } from "esbuild-sass-plugin";
-import postcss from "postcss";
-import autoprefixer from "autoprefixer";
+import esbuild from 'esbuild';
+import { sassPlugin } from 'esbuild-sass-plugin';
+import postcss from 'postcss';
+import autoprefixer from 'autoprefixer';
 
 // --------------------------------------------------
 // 🔧 Setup
@@ -19,14 +19,10 @@ const __dirname = path.dirname(__filename);
 // const domain = path.basename(path.resolve(__dirname, "../")).toLowerCase() + ".test";
 
 // JavaScript files
-const jsFiles = [
-  "assets/main.js"
-]
+const jsFiles = ['assets/main.js'];
 
 // CSS files
-const cssFiles = [
-  "assets/style.scss"
-]
+const cssFiles = ['assets/style.scss'];
 
 // --------------------------------------------------
 // ⚡ BrowserSync
@@ -51,14 +47,14 @@ const cssFiles = [
 
 const jsContext = await esbuild.context({
   entryPoints: jsFiles,
-  outdir: "assets",
+  outdir: 'assets',
   outExtension: {
-    ".js": ".min.js"
+    '.js': '.min.js',
   },
   minify: true,
   bundle: true,
   sourcemap: true,
-})
+});
 
 await jsContext.watch();
 
@@ -69,20 +65,20 @@ await jsContext.watch();
 
 const cssContext = await esbuild.context({
   entryPoints: cssFiles,
-  outdir: "assets",
+  outdir: 'assets',
   minify: true,
   sourcemap: true,
   plugins: [
     sassPlugin({
       async transform(source) {
         const { css } = await postcss([autoprefixer]).process(source, {
-          from: undefined // This is needed to prevent postcss from trying to resolve the file path
+          from: undefined, // This is needed to prevent postcss from trying to resolve the file path
         });
         return css;
       },
-    })
-  ]
-})
+    }),
+  ],
+});
 
 await cssContext.watch();
 
