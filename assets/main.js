@@ -358,6 +358,8 @@ if (carousel) {
     pagination: false,
   });
 
+  splide.remove('.product__media-item.product__media-item--variant');
+
   carousel.addEventListener('pause', () => {
     splide.Components.Autoplay.pause();
   });
