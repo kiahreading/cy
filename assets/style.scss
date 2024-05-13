@@ -444,11 +444,11 @@ p a {
     transition-property: height;
   }
 }
-@include for-large-tablet-portrait-below {
-  .product__media-item:not(:first-of-type) {
-    display: none!important;
-  }
-}
+// @include for-large-tablet-portrait-below {
+//   .product__media-item:not(:first-of-type) {
+//     display: none!important;
+//   }
+// }
 
 /* collection
 ---------------------------------------------- */
@@ -1363,6 +1363,9 @@ variant-radios {
       text-transform: uppercase;
       letter-spacing: .18em;
       margin: 1rem 0;
+      @include for-phone-below {
+        width: 200px;
+      }
       &:focus-visible {
         outline: none;
       }
@@ -1372,6 +1375,13 @@ variant-radios {
         color: inherit;
         opacity: 1;
         letter-spacing: .18em;
+      }
+    }
+    textarea {
+      resize: none;
+      width: 300px;
+      @include for-phone-below {
+        width: 200px;
       }
     }
     button {
