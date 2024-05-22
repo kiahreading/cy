@@ -17,7 +17,7 @@
         "designer_eJKdm8": {
           "type": "designer",
           "settings": {
-            "text_transform": "none",
+            "text_transform": "uppercase",
             "text_margin_bottom": "none"
           }
         },
