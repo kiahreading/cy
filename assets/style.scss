@@ -969,7 +969,7 @@ fieldset.product-form__input .form__label::after {
 
 /* Product info */
 .product__info-wrapper {
-  padding-top: 20vh;
+  padding-top: 18vh;
   @include for-phone-below {
     padding-top: 0vh;
     padding-left: var(--lr-page-padding);
