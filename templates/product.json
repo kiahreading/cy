@@ -28,11 +28,6 @@
             "text_transform": "uppercase"
           }
         },
-        "price_6zrKUN": {
-          "type": "price",
-          "settings": {
-          }
-        },
         "text_AHxXMc": {
           "type": "text",
           "settings": {
@@ -47,6 +42,11 @@
             "text": "{{ product.metafields.custom.lead_time.value }}",
             "text_style": "body",
             "text_margin_bottom": "regular"
+          }
+        },
+        "price_6zrKUN": {
+          "type": "price",
+          "settings": {
           }
         },
         "inventory_YHwqwY": {
@@ -110,9 +110,9 @@
         "vendor_f399Mz",
         "text_rmeVP6",
         "description_bFawAK",
-        "price_6zrKUN",
         "text_AHxXMc",
         "text_KjamA7",
+        "price_6zrKUN",
         "inventory_YHwqwY",
         "variant_picker_6yfWpM",
         "quantity_selector_9YLzyD",
