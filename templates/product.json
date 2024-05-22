@@ -36,11 +36,19 @@
             "text_margin_bottom": "none"
           }
         },
+        "text_pT9Te6": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.custom.dimensions.value }}",
+            "text_style": "body",
+            "text_margin_bottom": "none"
+          }
+        },
         "text_KjamA7": {
           "type": "text",
           "settings": {
             "text": "{{ product.metafields.custom.lead_time.value }}",
-            "text_style": "body",
+            "text_style": "uppercase",
             "text_margin_bottom": "regular"
           }
         },
@@ -111,6 +119,7 @@
         "text_rmeVP6",
         "description_bFawAK",
         "text_AHxXMc",
+        "text_pT9Te6",
         "text_KjamA7",
         "price_6zrKUN",
         "inventory_YHwqwY",
