@@ -969,7 +969,7 @@ fieldset.product-form__input .form__label::after {
 
 /* Product info */
 .product__info-wrapper {
-  padding-top: 25vh;
+  padding-top: 20vh;
   @include for-phone-below {
     padding-top: 0vh;
     padding-left: var(--lr-page-padding);
@@ -1057,7 +1057,11 @@ a.product__text {
   text-transform: uppercase;
 }
 
-.price--product, .product-form__submit, variant-radios{
+.product-form__submit {
+  margin-top: .8rem;
+}
+
+.price--product, variant-radios{
   margin-top: 2rem;
 }
 
