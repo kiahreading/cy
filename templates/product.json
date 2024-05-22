@@ -14,6 +14,13 @@
             "text_margin_bottom": "regular"
           }
         },
+        "designer_eJKdm8": {
+          "type": "designer",
+          "settings": {
+            "text_transform": "none",
+            "text_margin_bottom": "none"
+          }
+        },
         "text_rmeVP6": {
           "type": "text",
           "settings": {
@@ -116,6 +123,7 @@
       "block_order": [
         "title_WNLh9R",
         "vendor_f399Mz",
+        "designer_eJKdm8",
         "text_rmeVP6",
         "description_bFawAK",
         "text_AHxXMc",
