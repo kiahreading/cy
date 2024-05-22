@@ -33,6 +33,14 @@
           "settings": {
           }
         },
+        "text_AHxXMc": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_style": "body",
+            "text_margin_bottom": "none"
+          }
+        },
         "text_KjamA7": {
           "type": "text",
           "settings": {
@@ -103,6 +111,7 @@
         "text_rmeVP6",
         "description_bFawAK",
         "price_6zrKUN",
+        "text_AHxXMc",
         "text_KjamA7",
         "inventory_YHwqwY",
         "variant_picker_6yfWpM",
