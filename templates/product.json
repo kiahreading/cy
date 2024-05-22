@@ -14,6 +14,14 @@
             "text_margin_bottom": "none"
           }
         },
+        "text_BzwhtT": {
+          "type": "text",
+          "settings": {
+            "text": "Designed by {{ product.metafields.custom.designer.value }}",
+            "text_style": "uppercase",
+            "text_margin_bottom": "regular"
+          }
+        },
         "text_rmeVP6": {
           "type": "text",
           "settings": {
@@ -116,6 +124,7 @@
       "block_order": [
         "title_WNLh9R",
         "vendor_f399Mz",
+        "text_BzwhtT",
         "text_rmeVP6",
         "description_bFawAK",
         "text_AHxXMc",
