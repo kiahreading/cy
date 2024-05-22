@@ -2248,10 +2248,10 @@ input[type=number] {
 
 .contact-image__picture {
   img {
-    height: 30vw;
+    height: 24vw;
     width: auto;
     @include for-small-tablet-below {
-     height: 65vw;
+     height: 52vw;
      }
    }
 }
@@ -2285,6 +2285,9 @@ input[type=number] {
       font-size: var(--medium-font-size);
       margin-top: 2rem;
       margin-bottom: 1rem;
+    }
+    li {
+      margin-bottom: 1.5rem;
     }
   }
   &__title {
