@@ -920,6 +920,7 @@ fieldset.product-form__input .form__label::after {
   margin-bottom: 1rem;
   letter-spacing: inherit;
   text-decoration: underline;
+  text-transform: uppercase;
   span {
     font-weight: 400;
   }
@@ -1306,6 +1307,7 @@ variant-radios {
     margin-bottom: 1rem;
     letter-spacing: inherit;
     text-decoration: underline;
+    text-transform: uppercase;
   }
 }
 
