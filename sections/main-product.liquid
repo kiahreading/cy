@@ -156,7 +156,7 @@
             {%- case block.type -%}
               {%- when 'text' -%}
                 <p
-                  class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
+                  class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %} {% block.settings.text_margin_bottom %}"
                   {{ block.shopify_attributes }}
                 >
                   {{- block.settings.text -}}
@@ -713,6 +713,10 @@
             {
               "value": "none",
               "label": "None"
+            },
+            {
+              "value": "small",
+              "label": "Small"
             },
             {
               "value": "regular",

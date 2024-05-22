@@ -721,8 +721,18 @@ p a {
   }
   &__designer {
     text-transform: uppercase;
-    margin-top: 1rem;
+    margin-top: .8rem;
   }
+  .margin-bottom--none {
+    margin-bottom: none;
+  }
+  .margin-bottom--small {
+    margin-bottom: .8rem;
+  }
+  .margin-bottom--regular {
+    margin-bottom: 2rem;
+  }
+
 }
 
 // .product-popup-modal {
