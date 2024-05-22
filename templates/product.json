@@ -31,7 +31,7 @@
         "text_AHxXMc": {
           "type": "text",
           "settings": {
-            "text": "",
+            "text": "{{ product.metafields.custom.materials.value }}",
             "text_style": "body",
             "text_margin_bottom": "none"
           }
