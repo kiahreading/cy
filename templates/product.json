@@ -11,7 +11,15 @@
         "vendor_f399Mz": {
           "type": "vendor",
           "settings": {
-            "text_margin_bottom": "none"
+            "text_margin_bottom": "regular"
+          }
+        },
+        "text_BzwhtT": {
+          "type": "text",
+          "settings": {
+            "text": "Designed by {{ product.metafields.custom.designer.value }}",
+            "text_style": "uppercase",
+            "text_margin_bottom": "regular"
           }
         },
         "text_rmeVP6": {
@@ -28,17 +36,33 @@
             "text_transform": "uppercase"
           }
         },
-        "price_6zrKUN": {
-          "type": "price",
+        "text_AHxXMc": {
+          "type": "text",
           "settings": {
+            "text": "{{ product.metafields.custom.materials.value }}",
+            "text_style": "body",
+            "text_margin_bottom": "none"
+          }
+        },
+        "text_pT9Te6": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.custom.dimensions.value }}",
+            "text_style": "body",
+            "text_margin_bottom": "none"
           }
         },
         "text_KjamA7": {
           "type": "text",
           "settings": {
             "text": "{{ product.metafields.custom.lead_time.value }}",
-            "text_style": "body",
+            "text_style": "uppercase",
             "text_margin_bottom": "regular"
+          }
+        },
+        "price_6zrKUN": {
+          "type": "price",
+          "settings": {
           }
         },
         "inventory_YHwqwY": {
@@ -100,10 +124,13 @@
       "block_order": [
         "title_WNLh9R",
         "vendor_f399Mz",
+        "text_BzwhtT",
         "text_rmeVP6",
         "description_bFawAK",
-        "price_6zrKUN",
+        "text_AHxXMc",
+        "text_pT9Te6",
         "text_KjamA7",
+        "price_6zrKUN",
         "inventory_YHwqwY",
         "variant_picker_6yfWpM",
         "quantity_selector_9YLzyD",
@@ -114,7 +141,7 @@
         "popup_mMFRbR"
       ],
       "settings": {
-        "hide_variants": true
+        "hide_variants": false
       }
     },
     "related-products": {
