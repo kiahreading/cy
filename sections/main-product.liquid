@@ -268,6 +268,14 @@
                     <span class="caption-with-letter-spacing">{{ product.metafields.custom.year }}</span>
                   {%- endif -%}
                 </p>
+                {%- when 'designer' -%}
+                  <p
+                    class="product__designer"
+                  >
+                    {%- if product.metafields.custom.designer -%}
+                      <span class="caption-with-letter-spacing">Designed by {{ product.metafields.custom.designer }}</span>
+                    {%- endif -%}
+                  </p>
               {%- when 'sku' -%}
                 <p
                   class="product__sku no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.sku.size == 0 %} visibility-hidden{% endif %}"
@@ -875,6 +883,45 @@
       "type": "buy_buttons",
       "name": "t:sections.main-product.blocks.buy_buttons.name",
       "limit": 1
+    },
+    {
+      "type": "designer",
+      "name": "Designer",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "text_transform",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "uppercase",
+              "label": "Uppercase"
+            }
+          ],
+          "default": "none",
+          "label": "Text transform"
+        },
+        {
+          "type": "select",
+          "id": "text_margin_bottom",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "regular",
+              "label": "Regular"
+            }
+          ],
+          "default": "none",
+          "label": "Margin bottom"
+        }
+      ]
     },
     {
       "type": "description",
