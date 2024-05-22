@@ -17,7 +17,6 @@
         "designer_eJKdm8": {
           "type": "designer",
           "settings": {
-            "text_transform": "uppercase",
             "text_margin_bottom": "none"
           }
         },
@@ -48,7 +47,7 @@
           "settings": {
             "text": "{{ product.metafields.custom.dimensions.value }}",
             "text_style": "body",
-            "text_margin_bottom": "none"
+            "text_margin_bottom": "regular"
           }
         },
         "text_KjamA7": {
