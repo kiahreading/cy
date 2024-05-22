@@ -55,7 +55,7 @@
           "settings": {
             "text": "{{ product.metafields.custom.lead_time.value }}",
             "text_style": "body",
-            "text_margin_bottom": "regular"
+            "text_margin_bottom": "none"
           }
         },
         "price_6zrKUN": {
