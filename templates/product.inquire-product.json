@@ -11,6 +11,12 @@
         "vendor_f399Mz": {
           "type": "vendor",
           "settings": {
+            "text_margin_bottom": "regular"
+          }
+        },
+        "designer_L7447t": {
+          "type": "designer",
+          "settings": {
             "text_margin_bottom": "none"
           }
         },
@@ -28,10 +34,20 @@
             "text_transform": "uppercase"
           }
         },
-        "price_6zrKUN": {
-          "type": "price",
-          "disabled": true,
+        "text_webTnG": {
+          "type": "text",
           "settings": {
+            "text": "{{ product.metafields.custom.materials.value }}",
+            "text_style": "body",
+            "text_margin_bottom": "none"
+          }
+        },
+        "text_jy9miG": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.custom.dimensions.value }}",
+            "text_style": "body",
+            "text_margin_bottom": "regular"
           }
         },
         "text_KjamA7": {
@@ -39,7 +55,13 @@
           "settings": {
             "text": "{{ product.metafields.custom.lead_time.value }}",
             "text_style": "body",
-            "text_margin_bottom": "regular"
+            "text_margin_bottom": "none"
+          }
+        },
+        "price_6zrKUN": {
+          "type": "price",
+          "disabled": true,
+          "settings": {
           }
         },
         "inventory_YHwqwY": {
@@ -101,10 +123,13 @@
       "block_order": [
         "title_WNLh9R",
         "vendor_f399Mz",
+        "designer_L7447t",
         "text_rmeVP6",
         "description_bFawAK",
-        "price_6zrKUN",
+        "text_webTnG",
+        "text_jy9miG",
         "text_KjamA7",
+        "price_6zrKUN",
         "inventory_YHwqwY",
         "variant_picker_6yfWpM",
         "quantity_selector_9YLzyD",
