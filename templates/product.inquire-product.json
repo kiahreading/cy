@@ -102,21 +102,21 @@
           "type": "popup",
           "settings": {
             "text": "Questions?",
-            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<\/p>"
+            "content": "<p>For further inquiries on our products, please send us an email to cy@cycycy.com. <\/p>"
           }
         },
         "popup_wTFGLN": {
           "type": "popup",
           "settings": {
             "text": "Shipping",
-            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<\/p>"
+            "content": "<p>We offer local and worldwide shipping arrangements. The shipping prices will vary depending on weight, size and destination. Please inquire for further details.<\/p>"
           }
         },
         "popup_mMFRbR": {
           "type": "popup",
           "settings": {
             "text": "Return Policy",
-            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<\/p>"
+            "content": "<p>Made-to-order and CY Historic products are non-returnable. For all other products, we accept returns and refunds.<\/p>"
           }
         }
       },
