@@ -11,7 +11,6 @@
   "sections": {
     "main": {
       "type": "main-contact-content",
-      "disabled": true,
       "settings": {
         "address_text": "7296 NW 1st Ct, Miami FL 33150",
         "address_url": "https://goo.gl/maps/VaHvbALAgc6hMU3NA",

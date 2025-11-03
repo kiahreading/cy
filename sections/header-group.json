@@ -13,7 +13,6 @@
   "sections": {
     "header": {
       "type": "header",
-      "disabled": true,
       "settings": {
         "menu": "main-menu",
         "mobilemenu": "mobile-menu",
@@ -25,6 +24,7 @@
       "blocks": {
         "ai_gen_block_3be47c6_rmmgNR": {
           "type": "ai_gen_block_3be47c6",
+          "disabled": true,
           "settings": {
             "heading": "<p>Contact Form</p>",
             "subtext": "<p>Send us your contact information</p>",
