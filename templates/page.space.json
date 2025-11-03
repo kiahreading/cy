@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -6,9 +15,9 @@
         "space_title": "The space",
         "space_text": "CY is an industrial space that serves  as a showroom, but also as an extension of the artists' studio. Showcasing the artistic process is as equally important as the final product.",
         "space_button_text": "Contact us",
-        "space_button_url": "shopify:\/\/pages\/contact",
-        "image": "shopify:\/\/shop_images\/G6A6672_web.jpg",
-        "mobile_image": "shopify:\/\/shop_images\/G6A6672_web.jpg"
+        "space_button_url": "shopify://pages/contact-b",
+        "image": "shopify://shop_images/G6A6672_web.jpg",
+        "mobile_image": "shopify://shop_images/G6A6672_web.jpg"
       }
     }
   },
