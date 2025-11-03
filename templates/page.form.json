@@ -17,9 +17,46 @@
         "contact_text": "To make an appointment to visit our showroom or for any inquiries, please email us at cy@cycycy.com.",
         "image": "shopify://shop_images/CY-ESPINA.png"
       }
+    },
+    "blocks_Mampzb": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_3be47c6_YcWWa3": {
+          "type": "ai_gen_block_3be47c6",
+          "settings": {
+            "heading": "<p>Get in touch</p>",
+            "subtext": "<p>We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>",
+            "text_alignment": "left",
+            "show_phone": false,
+            "button_label": "Send message",
+            "success_message": "<p>Thanks for contacting us. We'll get back to you as soon as possible.</p>",
+            "heading_size": 32,
+            "max_width": 600,
+            "padding": 40,
+            "border_radius": 8,
+            "input_border_radius": 4,
+            "button_border_radius": 4,
+            "background_color": "#f9f9f9",
+            "text_color": "#000000",
+            "input_border_color": "#cccccc",
+            "button_color": "#000000",
+            "button_text_color": "#ffffff",
+            "button_hover_color": "#333333",
+            "success_color": "#008060",
+            "error_color": "#D82C0D"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_3be47c6_YcWWa3"
+      ],
+      "name": "Contact form",
+      "settings": {}
     }
   },
   "order": [
-    "main"
+    "main",
+    "blocks_Mampzb"
   ]
 }
