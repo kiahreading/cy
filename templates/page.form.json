@@ -1,0 +1,25 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-contact-content",
+      "settings": {
+        "address_text": "7296 NW 1st Ct, Miami FL 33150",
+        "address_url": "https://goo.gl/maps/VaHvbALAgc6hMU3NA",
+        "contact_text": "To make an appointment to visit our showroom or for any inquiries, please email us at cy@cycycy.com.",
+        "image": "shopify://shop_images/CY-ESPINA.png"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
