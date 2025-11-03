@@ -37,7 +37,7 @@
             "button_text_color": "#ffffff",
             "button_hover_color": "#333333",
             "success_color": "#008060",
-            "error_color": "#D82C0D"
+            "error_color": "#d82c0d"
           },
           "blocks": {}
         }
