@@ -11,12 +11,20 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
+    "header": {
+      "type": "header",
+      "disabled": true,
+      "settings": {
+        "menu": "main-menu",
+        "mobilemenu": "mobile-menu",
+        "mobilefootermenu": "footer"
+      }
+    },
     "17621911590333dab0": {
       "type": "_blocks",
       "blocks": {
         "ai_gen_block_3be47c6_rmmgNR": {
           "type": "ai_gen_block_3be47c6",
-          "disabled": true,
           "settings": {
             "heading": "<p>Contact Form</p>",
             "subtext": "<p>Send us your contact information</p>",
@@ -46,18 +54,10 @@
         "ai_gen_block_3be47c6_rmmgNR"
       ],
       "settings": {}
-    },
-    "header": {
-      "type": "header",
-      "settings": {
-        "menu": "main-menu",
-        "mobilemenu": "mobile-menu",
-        "mobilefootermenu": "footer"
-      }
     }
   },
   "order": [
-    "17621911590333dab0",
-    "header"
+    "header",
+    "17621911590333dab0"
   ]
 }
