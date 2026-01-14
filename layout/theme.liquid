@@ -81,7 +81,8 @@ src="https://www.facebook.com/tr?id=2258149334587788&ev=PageView&noscript=1"
         document.head.appendChild(style);
       }
     </script>
-  </head>
+    {% render 'rapid-search-settings' %}
+</head>
 
   <body class="template-{{ template | handleize }}">
     {% sections 'header-group' %}
